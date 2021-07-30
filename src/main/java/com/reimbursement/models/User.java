@@ -24,7 +24,7 @@ public class User {
 	
 	@Id
 	@Column(name = "user_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	
 	@Column(name = "user_name", nullable = false)
@@ -41,6 +41,7 @@ public class User {
 	
 	@Column(name = "password", nullable = false)
 	private String password;
+	
 
 	@OneToMany(mappedBy = "userReimbursements", fetch = FetchType.LAZY)
 	private List<Reimbursement> remList = new ArrayList<Reimbursement>();
@@ -54,12 +55,25 @@ public class User {
 		
 	}
 	
+
 	public User(String firstname, String lastname, String email, String password) {
+		super();
+		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000); 
 		this.email = email;
 		this.password = password;
+	}
+	
+	public User(String firstname, String lastname, String email, String password, UserRole uRole) {
+		super();
+		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.uRole = uRole;
 	}
 
 	public User(int userId, String username, String firstname, String lastname, String email, String password) {
@@ -71,6 +85,18 @@ public class User {
 		this.email = email;
 		this.password = password;
 	}
+	
+	public User(int userId, String username, String firstname, String lastname, String email, String password, UserRole userRole) {
+		super();
+		this.userId = userId;
+		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.uRole = userRole;
+	}
+
 
 	public int getUserId() {
 		return userId;

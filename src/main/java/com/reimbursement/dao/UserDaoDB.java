@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.reimbursement.util.HibernateUtil;
-import com.reimbursement.models.Reimbursement;
 import com.reimbursement.models.User;
 import com.reimbursement.models.UserRole;
 

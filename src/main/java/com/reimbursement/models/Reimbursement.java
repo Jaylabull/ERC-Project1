@@ -1,6 +1,9 @@
 package com.reimbursement.models;
 
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity
@@ -19,17 +26,21 @@ public class Reimbursement {
 	
 	@Id
 	@Column(name = "reimb_id", nullable = false, unique = true)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int reimbursement_id;
 	
 	@Column(name = "reimb_amt", nullable = false)
 	private int reimbursement_amt;
 	
-	@Column(name = "reimb_submit", nullable = false)
-	private String reimbursement_submt;
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "reimb_submit", nullable = true)
+	private Date reimbursement_submt;
 	
-	@Column(name = "reimb_resolve", nullable = false)
-	private String reimbursement_resolv;
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "reimb_resolve", nullable = true)
+	private Date reimbursement_resolv;
 	
 	@Column(name = "reimb_despt", nullable = false)
 	private String reimbursement_despt;
@@ -51,7 +62,25 @@ public class Reimbursement {
 	
 	}
 
-	public Reimbursement(int reimbursement_amt, String reimbursement_submt, String reimbursement_resolv,
+	
+	public Reimbursement(int reimbursement_amt, String reimbursement_despt) {
+		super();
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_despt = reimbursement_despt;
+	}
+
+
+	public Reimbursement(int reimbursement_amt, String reimbursement_despt,
+			ReimbursementType rType, ReimbursementStatus rStatus) {
+		super();
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_despt = reimbursement_despt;
+		this.rType = rType;
+		this.rStatus = rStatus;
+	}
+
+
+	public Reimbursement(int reimbursement_amt, Timestamp reimbursement_submt, Timestamp reimbursement_resolv,
 			String reimbursement_despt) {
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_submt = reimbursement_submt;
@@ -59,8 +88,8 @@ public class Reimbursement {
 		this.reimbursement_despt = reimbursement_despt;
 	}
 
-	public Reimbursement(int reimbursement_id, int reimbursement_amt, String reimbursement_submt,
-			String reimbursement_resolv, String reimbursement_despt) {
+	public Reimbursement(int reimbursement_id, int reimbursement_amt, Timestamp reimbursement_submt,
+			Timestamp reimbursement_resolv, String reimbursement_despt) {
 		super();
 		this.reimbursement_id = reimbursement_id;
 		this.reimbursement_amt = reimbursement_amt;
@@ -85,19 +114,19 @@ public class Reimbursement {
 		this.reimbursement_amt = reimbursement_amt;
 	}
 
-	public String getReimbursement_submt() {
+	public Date getReimbursement_submt() {
 		return reimbursement_submt;
 	}
 
-	public void setReimbursement_submt(String reimbursement_submt) {
+	public void setReimbursement_submt(Timestamp reimbursement_submt) {
 		this.reimbursement_submt = reimbursement_submt;
 	}
 
-	public String getReimbursement_resolv() {
+	public Date getReimbursement_resolv() {
 		return reimbursement_resolv;
 	}
 
-	public void setReimbursement_resolv(String reimbursement_resolv) {
+	public void setReimbursement_resolv(Timestamp reimbursement_resolv) {
 		this.reimbursement_resolv = reimbursement_resolv;
 	}
 

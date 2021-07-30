@@ -31,6 +31,12 @@ public class UserRole {
 		
 	}
 	
+	public UserRole(int userId, String userRole) {
+		super();
+		this.userId = userId;
+		this.userRole = userRole;
+	}
+
 	public UserRole(String userRole) {
 		this.userRole = userRole;
 	}

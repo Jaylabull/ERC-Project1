@@ -1,9 +1,12 @@
 package com.reimbursement.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.reimbursement.util.HibernateUtil;
+import com.reimbursement.models.Reimbursement;
 import com.reimbursement.models.User;
 
 public class UserDaoDB implements UserDao {
@@ -29,5 +32,12 @@ public class UserDaoDB implements UserDao {
 		User user = ses.get(User.class, userId);
 		return user;
 	}
+	
+	public List<User> selectAllUsers(){
+		Session ses = HibernateUtil.getSession();
+		List<User> uList = ses.createQuery("from User", User.class).list();
+		return uList;
+	}
+	
 	
 }

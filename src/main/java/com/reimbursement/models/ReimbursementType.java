@@ -1,8 +1,16 @@
 package com.reimbursement.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -10,8 +18,17 @@ import javax.persistence.Table;
 public class ReimbursementType {
 
 	@Id
+	@Column(name = "rmb_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int rmbId;
+	
+	
 	@Column(name = "reimbursement_type")
 	private String reimbursement_type;
+	
+	@OneToMany(mappedBy = "rType", fetch = FetchType.LAZY)
+	private List<Reimbursement> reimList = new ArrayList<Reimbursement>();
+	
 	
 	public ReimbursementType() {
 		

@@ -1,5 +1,6 @@
 package com.reimbursement.models;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,6 +38,9 @@ public class Reimbursement {
 	@JoinColumn(name = "Reimbursements_FK")
 	private User userReimbursements;
 	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "reimb_type_FK")
+	private ReimbursementType rType;
 
 	public Reimbursement() {
 	

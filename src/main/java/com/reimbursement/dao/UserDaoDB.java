@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import com.reimbursement.util.HibernateUtil;
 import com.reimbursement.models.Reimbursement;
 import com.reimbursement.models.User;
+import com.reimbursement.models.UserRole;
 
 public class UserDaoDB implements UserDao {
 
@@ -37,6 +38,13 @@ public class UserDaoDB implements UserDao {
 		Session ses = HibernateUtil.getSession();
 		List<User> uList = ses.createQuery("from User", User.class).list();
 		return uList;
+	}
+
+	public UserRole updateUser(String userRole) {
+		Session ses = HibernateUtil.getSession();
+		UserRole ur = ses.get(UserRole.class, userRole);
+		ses.update(ur);
+		return ur;
 	}
 	
 	

@@ -42,6 +42,11 @@ public class Reimbursement {
 	@JoinColumn(name = "reimb_type_FK")
 	private ReimbursementType rType;
 
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "reimb_status_FK")
+	private ReimbursementStatus rStatus;
+	
+	
 	public Reimbursement() {
 	
 	}

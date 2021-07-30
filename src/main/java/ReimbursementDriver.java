@@ -3,6 +3,7 @@ import com.reimbursement.dao.ReimbursementDaoDB;
 import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.models.Reimbursement;
 import com.reimbursement.models.User;
+import com.reimbursement.models.UserRole;
 
 public class ReimbursementDriver {
 
@@ -12,12 +13,13 @@ public class ReimbursementDriver {
 		
 		ReimbursementDaoDB rDao = new ReimbursementDaoDB();
 		
+		UserRole ur = new UserRole();
 		
-		User u = new User("Jayla", "Bull", "jb@gmail.com", "password");
+		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password");
 		uDao.createUser(u);
+		uDao.updateUser("EMPLOYEE");
 		
-		
-		Reimbursement r = new Reimbursement(50, "SUBMITTED", "PENDING", "Company dinner expense.");
+		Reimbursement r = new Reimbursement(150, "SUBMITTED", "PENDING", "Company outing.");
 		rDao.createReim(r);
 		
 		

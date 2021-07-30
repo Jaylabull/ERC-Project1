@@ -3,6 +3,7 @@ package com.reimbursement.models;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Random;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -65,6 +66,7 @@ public class Reimbursement {
 	
 	public Reimbursement(int reimbursement_amt, String reimbursement_despt) {
 		super();
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_despt = reimbursement_despt;
 	}
@@ -73,6 +75,7 @@ public class Reimbursement {
 	public Reimbursement(int reimbursement_amt, String reimbursement_despt,
 			ReimbursementType rType, ReimbursementStatus rStatus) {
 		super();
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_despt = reimbursement_despt;
 		this.rType = rType;
@@ -82,6 +85,7 @@ public class Reimbursement {
 
 	public Reimbursement(int reimbursement_amt, Timestamp reimbursement_submt, Timestamp reimbursement_resolv,
 			String reimbursement_despt) {
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_submt = reimbursement_submt;
 		this.reimbursement_resolv = reimbursement_resolv;
@@ -91,12 +95,27 @@ public class Reimbursement {
 	public Reimbursement(int reimbursement_id, int reimbursement_amt, Timestamp reimbursement_submt,
 			Timestamp reimbursement_resolv, String reimbursement_despt) {
 		super();
-		this.reimbursement_id = reimbursement_id;
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_submt = reimbursement_submt;
 		this.reimbursement_resolv = reimbursement_resolv;
 		this.reimbursement_despt = reimbursement_despt;
 	}
+
+	public Reimbursement(int reimbursement_id, int reimbursement_amt, Date reimbursement_submt,
+			Date reimbursement_resolv, String reimbursement_despt, User userReimbursements, ReimbursementType rType,
+			ReimbursementStatus rStatus) {
+		super();
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_submt = reimbursement_submt;
+		this.reimbursement_resolv = reimbursement_resolv;
+		this.reimbursement_despt = reimbursement_despt;
+		this.userReimbursements = userReimbursements;
+		this.rType = rType;
+		this.rStatus = rStatus;
+	}
+
 
 	public int getReimbursement_id() {
 		return reimbursement_id;

@@ -34,6 +34,19 @@ public class ReimbursementStatus {
 	public ReimbursementStatus(String reimbursement_status) {
 		this.reimbursement_status = reimbursement_status;
 	}
+	
+	public ReimbursementStatus(int statusId, String reimbursement_status) {
+		super();
+		this.statusId = statusId;
+		this.reimbursement_status = reimbursement_status;
+	}
+	
+	public ReimbursementStatus(int statusId, String reimbursement_status, List<Reimbursement> reimList) {
+		super();
+		this.statusId = statusId;
+		this.reimbursement_status = reimbursement_status;
+		this.reimList = reimList;
+	}
 
 	public String getReimbursement_status() {
 		return reimbursement_status;

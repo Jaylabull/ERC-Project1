@@ -18,7 +18,7 @@ public class UserRole {
 	
 	@Id
 	@Column(name = "userId")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
 	
 	@Column(name = "user_role")
@@ -31,13 +31,13 @@ public class UserRole {
 		
 	}
 	
+	public UserRole(String userRole) {
+		this.userRole = userRole;
+	}
+	
 	public UserRole(int userId, String userRole) {
 		super();
 		this.userId = userId;
-		this.userRole = userRole;
-	}
-
-	public UserRole(String userRole) {
 		this.userRole = userRole;
 	}
 

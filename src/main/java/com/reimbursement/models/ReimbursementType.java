@@ -20,7 +20,7 @@ public class ReimbursementType {
 	@Id
 	@Column(name = "type_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int TypeId;
+	private int typeId;
 	
 	
 	@Column(name = "reimbursement_type")
@@ -39,6 +39,19 @@ public class ReimbursementType {
 		this.reimbursement_type = reimbursement_type;
 	}
 
+	public ReimbursementType(int typeId, String reimbursement_type) {
+		super();
+		this.typeId = typeId;
+		this.reimbursement_type = reimbursement_type;
+	}
+	
+	public ReimbursementType(int typeId, String reimbursement_type, List<Reimbursement> reimList) {
+		super();
+		this.typeId = typeId;
+		this.reimbursement_type = reimbursement_type;
+		this.reimList = reimList;
+	}
+
 	public String getReimbursement_type() {
 		return reimbursement_type;
 	}
@@ -49,9 +62,9 @@ public class ReimbursementType {
 
 	@Override
 	public String toString() {
-		return "ReimbursementType [reimbursement_type=" + reimbursement_type + "]";
+		return "ReimbursementType [typeId=" + typeId + ", reimbursement_type=" + reimbursement_type + ", reimList="
+				+ reimList + "]";
 	}
-	
-	
+
 	
 }

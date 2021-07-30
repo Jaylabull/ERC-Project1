@@ -55,19 +55,9 @@ public class User {
 		
 	}
 	
-
-	public User(String firstname, String lastname, String email, String password) {
-		super();
-		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000); 
-		this.email = email;
-		this.password = password;
-	}
-	
 	public User(String firstname, String lastname, String email, String password, UserRole uRole) {
 		super();
+		this.setUserId(new Random().nextInt(9000) + 1000);
 		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -75,26 +65,30 @@ public class User {
 		this.password = password;
 		this.uRole = uRole;
 	}
-
-	public User(int userId, String username, String firstname, String lastname, String email, String password) {
-		super();
-		this.userId = userId;
-		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.password = password;
-	}
 	
-	public User(int userId, String username, String firstname, String lastname, String email, String password, UserRole userRole) {
+	public User(String firstname, String lastname, String email, String password, List<Reimbursement> remList,
+			UserRole uRole) {
 		super();
-		this.userId = userId;
-		this.username = firstname + lastname + (new Random().nextInt(9000) + 1000);
+		this.setUserId(new Random().nextInt(9000) + 1000);
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
-		this.uRole = userRole;
+		this.remList = remList;
+		this.uRole = uRole;
+	}
+
+	public User(int userId, String username, String firstname, String lastname, String email, String password,
+			List<Reimbursement> remList, UserRole uRole) {
+		super();
+		this.setUserId(new Random().nextInt(9000) + 1000);
+		this.username = username;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.remList = remList;
+		this.uRole = uRole;
 	}
 
 

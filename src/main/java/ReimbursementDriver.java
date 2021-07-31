@@ -34,8 +34,6 @@ public class ReimbursementDriver {
 		ReimbursementType rt4 = new ReimbursementType("OTHER");
 		
 		//Reimbursement r = new Reimbursement(320, uDao.selectByUserId(0), uDao.selectByUserId(0), "Road trip to Cali", rt1, rs3);
-		
-		Reimbursement r1 = new Reimbursement(115, "Dinner at STK ATL", rt2, rs1);
 
 
 		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password", ur1);
@@ -46,9 +44,12 @@ public class ReimbursementDriver {
 		uDao.createUser(u1);
 		uDao.createUser(u2);
 		
-		rDao.createReim(r1);
 		
-		Reimbursement r = new Reimbursement(320, u, u1, "Road trip to Cali", rt1, rs3);
+		Reimbursement r = new Reimbursement(320, u, u2, "Road trip to Cali", rt1, rs3);
+		rDao.createReim(r);
+		
+		Reimbursement r1 = new Reimbursement(115, "Dinner at STK ATL", rt2, rs1);
+		rDao.createReim(r1);
 		
 		Reimbursement r2 = new Reimbursement(550, "Trip to NYC", rt1, rs2);
 		rDao.createReim(r2);

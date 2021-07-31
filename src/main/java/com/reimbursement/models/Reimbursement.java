@@ -43,6 +43,16 @@ public class Reimbursement {
 	@Column(name = "reimb_resolve", nullable = true)
 	private Date reimbursement_resolv;
 	
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "reimb_author", referencedColumnName = "user_id")
+	private User reimb_author;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name="reimb_resolver",  referencedColumnName = "user_id")
+	private User reimb_resolver;
+	
+	
 	@Column(name = "reimb_despt", nullable = false)
 	private String reimbursement_despt;
 	
@@ -110,6 +120,23 @@ public class Reimbursement {
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_submt = reimbursement_submt;
 		this.reimbursement_resolv = reimbursement_resolv;
+		this.reimbursement_despt = reimbursement_despt;
+		this.userReimbursements = userReimbursements;
+		this.rType = rType;
+		this.rStatus = rStatus;
+	}
+	
+
+	public Reimbursement(int reimbursement_id, int reimbursement_amt, Date reimbursement_submt,
+			Date reimbursement_resolv, User reimb_author, User reimb_resolver, String reimbursement_despt,
+			User userReimbursements, ReimbursementType rType, ReimbursementStatus rStatus) {
+		super();
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_submt = reimbursement_submt;
+		this.reimbursement_resolv = reimbursement_resolv;
+		this.reimb_author = reimb_author;
+		this.reimb_resolver = reimb_resolver;
 		this.reimbursement_despt = reimbursement_despt;
 		this.userReimbursements = userReimbursements;
 		this.rType = rType;

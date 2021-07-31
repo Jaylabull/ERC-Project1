@@ -27,7 +27,7 @@ public class Reimbursement {
 	
 	@Id
 	@Column(name = "reimb_id", nullable = false, unique = true)
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reimbursement_id;
 	
 	@Column(name = "reimb_amt", nullable = false)
@@ -47,7 +47,7 @@ public class Reimbursement {
 	private String reimbursement_despt;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "Reimbursements_FK")
+	@JoinColumn(name = "reimbursements_FK")
 	private User userReimbursements;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -161,7 +161,8 @@ public class Reimbursement {
 	public String toString() {
 		return "Reimbursement [reimbursement_id=" + reimbursement_id + ", reimbursement_amt=" + reimbursement_amt
 				+ ", reimbursement_submt=" + reimbursement_submt + ", reimbursement_resolv=" + reimbursement_resolv
-				+ ", reimbursement_despt=" + reimbursement_despt + "]";
+				+ ", reimbursement_despt=" + reimbursement_despt + ", userReimbursements=" + userReimbursements
+				+ ", rType=" + rType + ", rStatus=" + rStatus + "]";
 	}
-	
+
 }

@@ -19,7 +19,7 @@ public class ReimbursementType {
 
 	@Id
 	@Column(name = "type_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int typeId;
 	
 	

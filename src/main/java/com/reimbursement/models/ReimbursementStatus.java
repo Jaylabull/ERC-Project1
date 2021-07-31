@@ -18,7 +18,7 @@ public class ReimbursementStatus {
 
 	@Id
 	@Column(name = "status_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int statusId;
 	
 	@Column(name = "reimbursement_status")

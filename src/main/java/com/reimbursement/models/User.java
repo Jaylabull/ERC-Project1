@@ -47,7 +47,7 @@ public class User {
 	private List<Reimbursement> remList = new ArrayList<Reimbursement>();
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "uRole_FK")//name of new joins table
+	@JoinColumn(name = "uRole_FK")
 	private UserRole uRole;
 	
 		

@@ -43,18 +43,21 @@ public class User {
 	private String password;
 	
 
-	@OneToMany(mappedBy = "userReimbursements", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "rResolver", fetch = FetchType.LAZY)
 	private List<Reimbursement> remList = new ArrayList<Reimbursement>();
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "uRole_FK")
 	private UserRole uRole;
 	
+	@OneToMany(mappedBy = "rAuthor", fetch = FetchType.LAZY)
+	private List<Reimbursement> reimList = new ArrayList<Reimbursement>();
 		
 	public User() {
 		
 	}
 	
+
 	public User(String firstname, String lastname, String email, String password, UserRole uRole) {
 		super();
 		this.setUserId(new Random().nextInt(9000) + 1000);

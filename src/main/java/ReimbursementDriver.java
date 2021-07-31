@@ -19,7 +19,7 @@ public class ReimbursementDriver {
 		
 		ReimbursementDaoDB rDao = new ReimbursementDaoDB();
 		
-		
+				
 		UserRole ur1 = new UserRole("EMPLOYEE");
 		UserRole ur2 = new UserRole("FINANCIAL MANAGER");
 		
@@ -33,8 +33,22 @@ public class ReimbursementDriver {
 		ReimbursementType rt3 = new ReimbursementType("LODGING");
 		ReimbursementType rt4 = new ReimbursementType("OTHER");
 		
+		//Reimbursement r = new Reimbursement(320, uDao.selectByUserId(0), uDao.selectByUserId(0), "Road trip to Cali", rt1, rs3);
+		
 		Reimbursement r1 = new Reimbursement(115, "Dinner at STK ATL", rt2, rs1);
+
+
+		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password", ur1);
+		User u1 = new User("Mike", "Jones", "mj56@mail.com", "password", ur1);
+		User u2 = new User("Warren", "Buffet", "wb@mail.com", "password", ur2);
+		
+		uDao.createUser(u);
+		uDao.createUser(u1);
+		uDao.createUser(u2);
+		
 		rDao.createReim(r1);
+		
+		Reimbursement r = new Reimbursement(320, u, u1, "Road trip to Cali", rt1, rs3);
 		
 		Reimbursement r2 = new Reimbursement(550, "Trip to NYC", rt1, rs2);
 		rDao.createReim(r2);
@@ -46,14 +60,6 @@ public class ReimbursementDriver {
 		rList.add(r1);
 		rList.add(r2);
 		rList.add(r3);
-
-		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password", ur1);
-		User u1 = new User("Mike", "Jones", "mj56@mail.com", "password", ur1);
-		User u2 = new User("Warren", "Buffet", "wb@mail.com", "password", ur2);
-		
-		uDao.createUser(u);
-		uDao.createUser(u1);
-		uDao.createUser(u2);
 		
 //		HibernateUtil.closeSes();
 	}

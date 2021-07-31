@@ -57,6 +57,16 @@ public class User {
 		
 	}
 	
+	public User(String firstname, String lastname, String email, String password) {
+		super();
+		this.setUserId(new Random().nextInt(9000) + 1000);
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+	}
+
+
 
 	public User(String firstname, String lastname, String email, String password, UserRole uRole) {
 		super();
@@ -142,6 +152,32 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public List<Reimbursement> getRemList() {
+		return remList;
+	}
+
+
+	public void setRemList(List<Reimbursement> remList) {
+		this.remList = remList;
+	}
+
+	public UserRole getuRole() {
+		return uRole;
+	}
+
+	public void setuRole(UserRole uRole) {
+		this.uRole = uRole;
+	}
+
+	public List<Reimbursement> getReimList() {
+		return reimList;
+	}
+
+	public void setReimList(List<Reimbursement> reimList) {
+		this.reimList = reimList;
+	}
+
 
 	@Override
 	public String toString() {

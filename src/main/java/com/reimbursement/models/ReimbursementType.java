@@ -60,6 +60,22 @@ public class ReimbursementType {
 		this.reimbursement_type = reimbursement_type;
 	}
 
+	public int getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
+	}
+
+	public List<Reimbursement> getReimList() {
+		return reimList;
+	}
+
+	public void setReimList(List<Reimbursement> reimList) {
+		this.reimList = reimList;
+	}
+
 	@Override
 	public String toString() {
 		return "ReimbursementType [typeId=" + typeId + ", reimbursement_type=" + reimbursement_type + ", reimList="

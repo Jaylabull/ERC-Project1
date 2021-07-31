@@ -89,9 +89,6 @@ public class Reimbursement {
 		this.rStatus = rStatus;
 	}
 	
-	
-
-
 	public Reimbursement(int reimbursement_amt, User rAuthor, User rResolver, String reimbursement_despt,
 			ReimbursementType rType, ReimbursementStatus rStatus) {
 		super();
@@ -103,7 +100,6 @@ public class Reimbursement {
 		this.rType = rType;
 		this.rStatus = rStatus;
 	}
-
 
 	public Reimbursement(int reimbursement_amt, Timestamp reimbursement_submt, Timestamp reimbursement_resolv,
 			String reimbursement_despt) {

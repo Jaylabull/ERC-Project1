@@ -55,6 +55,22 @@ public class ReimbursementStatus {
 	public void setReimbursement_status(String reimbursement_status) {
 		this.reimbursement_status = reimbursement_status;
 	}
+	
+	public int getStatusId() {
+		return statusId;
+	}
+
+	public void setStatusId(int statusId) {
+		this.statusId = statusId;
+	}
+
+	public List<Reimbursement> getReimList() {
+		return reimList;
+	}
+
+	public void setReimList(List<Reimbursement> reimList) {
+		this.reimList = reimList;
+	}
 
 	@Override
 	public String toString() {

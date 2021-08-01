@@ -3717,3 +3717,5 @@ org.hibernate.HibernateException: Use of DefaultSchemaNameResolver requires Dial
 2021-07-31 15:53:55 DEBUG EntityPrinter:117 - com.reimbursement.models.ReimbursementStatus{statusId=1, reimbursement_status=DENIED, reimList=[]}
 2021-07-31 15:53:55 DEBUG LogicalConnectionManagedImpl:161 - Initiating JDBC connection release from afterTransaction
 2021-07-31 15:53:55 DEBUG LogicalConnectionManagedImpl:161 - Initiating JDBC connection release from afterTransaction
+2021-07-31 21:26:10 INFO  Logging:44 - User was logged in.
+2021-07-31 21:27:03 INFO  Logging:44 - User was logged in.

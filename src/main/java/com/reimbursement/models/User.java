@@ -68,6 +68,15 @@ public class User {
 
 
 
+	public User(int userId, String firstname, String lastname, String email, String password) {
+		super();
+		this.setUserId(new Random().nextInt(9000) + 1000);
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+	}
+
 	public User(String firstname, String lastname, String email, String password, UserRole uRole) {
 		super();
 		this.setUserId(new Random().nextInt(9000) + 1000);

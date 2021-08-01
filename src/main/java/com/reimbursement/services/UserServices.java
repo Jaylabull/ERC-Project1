@@ -5,6 +5,8 @@ package com.reimbursement.services;
 import java.sql.SQLException;
 
 import com.reimbursement.dao.UserDao;
+import com.reimbursement.exceptions.InvalidCredentialsException;
+import com.reimbursement.exceptions.UserDoesNotExistException;
 import com.reimbursement.exceptions.UserNameAlreadyExistsException;
 import com.reimbursement.logging.Logging;
 import com.reimbursement.models.User;
@@ -27,5 +29,22 @@ public class UserServices {
 		
 	}
 	
+	public User signIn(String username, String password) throws UserDoesNotExistException, InvalidCredentialsException{
+		User user = uDao.selectByUsername(username);
+		
+		if(user.getUserId() == 0) {
+			Logging.logger.warn("User tried logging in with a username that does not exist.");
+			throw new UserDoesNotExistException();
+		}
+		else if(!user.getPassword().equals(password)) {
+			Logging.logger.warn("User tried logging in with invalid credentials.");
+			throw new InvalidCredentialsException();
+		}
+		else {
+			Logging.logger.info("User was logged in.");
+			return user;
+		}
+	
+	}
 	
 }//End UserServices Class

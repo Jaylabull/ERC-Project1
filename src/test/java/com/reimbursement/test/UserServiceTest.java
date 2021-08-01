@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
+
 import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.models.User;
 import com.reimbursement.services.UserServices;
@@ -18,9 +19,11 @@ public class UserServiceTest {
 
 	@InjectMocks
 	public UserServices uServ;
+
 	
 	@Mock
 	public UserDaoDB uDao;
+	
 	
 	@Before
 	public void initMocks() {
@@ -39,6 +42,7 @@ public class UserServiceTest {
 		assertEquals(u.getUserId(), signedIn.getUserId());
 	}
 
+	
 
 	
 }

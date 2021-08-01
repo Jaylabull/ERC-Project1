@@ -44,7 +44,10 @@ public class UserServices {
 			Logging.logger.info("User was logged in.");
 			return user;
 		}
-	
 	}
+	
+	
+	
+	
 	
 }//End UserServices Class

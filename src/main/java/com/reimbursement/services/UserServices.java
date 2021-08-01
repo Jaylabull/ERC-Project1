@@ -10,6 +10,7 @@ import com.reimbursement.exceptions.UserDoesNotExistException;
 import com.reimbursement.exceptions.UserNameAlreadyExistsException;
 import com.reimbursement.logging.Logging;
 import com.reimbursement.models.User;
+import com.reimbursement.models.UserRole;
 
 public class UserServices {
 
@@ -19,9 +20,9 @@ public class UserServices {
 		this.uDao = u;
 	}
 	
-	public User signUp(String firstname, String lastname, String email, String password) throws UserNameAlreadyExistsException, SQLException{
+	public User signUp(String firstname, String lastname, String email, String password, UserRole uRole) throws UserNameAlreadyExistsException, SQLException{
 	
-		User newUser = new User(firstname, lastname, email, password);
+		User newUser = new User(firstname, lastname, email, password, uRole);
 		uDao.createUser(newUser);
 		Logging.logger.info("New user has registered.");
 		

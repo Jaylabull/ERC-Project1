@@ -39,8 +39,7 @@ public class ReimbursementServiceTest {
 		rList.add("test");
 		Mockito.verify(rList).add("test");
 		
-		assertEquals(1, rList.size());
-		
+		assertEquals(1, rList.size());	
 		
 	}
 	

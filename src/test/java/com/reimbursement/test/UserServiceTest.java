@@ -13,6 +13,7 @@ import static org.mockito.Mockito.when;
 
 import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.models.User;
+import com.reimbursement.models.UserRole;
 import com.reimbursement.services.UserServices;
 
 public class UserServiceTest {
@@ -32,8 +33,11 @@ public class UserServiceTest {
 	
 	@Test
 	public void testSignUp() {
-		User u = new User(1, "User", "Test", "test@email.com", "testpassword");
-		User notUser = new User(0, "User", "Test", "test@email.com", "testpassword");
+		UserRole r1 = new UserRole("EMPLOYEE");
+		UserRole r2 = new UserRole("FINANCIAL MANAGER");
+		
+		User u = new User(1, "User", "Test", "test@email.com", "testpassword", r1);
+		User notUser = new User(0, "User", "Test", "test@email.com", "testpassword", r2);
 		
 		when(uDao.selectByUsername(anyString())).thenReturn(u);
 		
@@ -41,8 +45,6 @@ public class UserServiceTest {
 		
 		assertEquals(u.getUserId(), signedIn.getUserId());
 	}
-
-	
 
 	
 }

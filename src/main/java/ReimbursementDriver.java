@@ -41,31 +41,35 @@ public class ReimbursementDriver {
 		User u4 = new User("String", "Builder", "sb@mail.com", "password", ur2);
 		User u5 = new User("Mickey", "Mouse", "mm@mail.com", "password", ur2);
 		
-		uDao.createUser(u);
-		uDao.createUser(u1);
-		uDao.createUser(u2);
-		uDao.createUser(u3);
-		uDao.createUser(u4);
-		uDao.createUser(u5);
+//		uDao.createUser(u);
+//		uDao.createUser(u1);
+//		uDao.createUser(u2);
+//		uDao.updateUser(u3);
+//		uDao.createUser(u4);
+//		uDao.createUser(u5);
 		
 		
-		Reimbursement r = new Reimbursement(320, u, u2, "Road trip to Cali", rt1, rs3);
-		rDao.createReim(r);
+//		Reimbursement r = new Reimbursement(320, u, u2, "Road trip to Cali", rt1, rs3);
+//		rDao.createReim(r);
+//		
+//		Reimbursement r1 = new Reimbursement(115, u2, u4 ,"Dinner at STK ATL", rt2, rs1);
+//		rDao.createReim(r1);
+//		
+//		Reimbursement r2 = new Reimbursement(550, u4, u5, "Trip to NYC", rt1, rs2);
+//		rDao.createReim(r2);
+//		
+//		Reimbursement r3 = new Reimbursement(675, u3, u4, "Hotel at DoubleTree LA", rt3, rs3);
+//		rDao.createReim(r3);
 		
-		Reimbursement r1 = new Reimbursement(115, u2, u4 ,"Dinner at STK ATL", rt2, rs1);
-		rDao.createReim(r1);
-		
-		Reimbursement r2 = new Reimbursement(550, u4, u5, "Trip to NYC", rt1, rs2);
-		rDao.createReim(r2);
-		
-		Reimbursement r3 = new Reimbursement(675, u3, u4, "Hotel at DoubleTree LA", rt3, rs3);
-		rDao.createReim(r3);
+//		Reimbursement r4 = new Reimbursement(555, u3, u, "Staying at the Ritz for the Weekend", rt3, rs3);
+//		rDao.createReim(r4);
 		
 		List<Reimbursement> rList = new ArrayList<Reimbursement>();
-		rList.add(r);
-		rList.add(r1);
-		rList.add(r2);
-		rList.add(r3);
+//		rList.add(r);
+//		rList.add(r1);
+//		rList.add(r2);
+//		rList.add(r3);
+//		rList.add(r4);
 		
 //		HibernateUtil.closeSes();
 	}

@@ -88,6 +88,17 @@ public class User {
 		this.uRole = uRole;
 	}
 	
+
+	public User(int userId, String firstname, String lastname, String email, String password, UserRole uRole) {
+		super();
+		this.setUserId(new Random().nextInt(9000) + 1000);
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.uRole = uRole;
+	}
+
 	public User(String firstname, String lastname, String email, String password, List<Reimbursement> remList,
 			UserRole uRole) {
 		super();

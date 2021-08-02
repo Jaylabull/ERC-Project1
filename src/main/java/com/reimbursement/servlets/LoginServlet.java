@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
+ 
 	
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+//	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 		
-		req.getRequestDispatcher("login.html").forward(req, res);
+//		req.getRequestDispatcher("login.html").forward(req, res);
+	private static final long serialVersionUID = 1L;
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
+		req.getRequestDispatcher("login.html").forward(req,  res);
 	}
 
 //protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{

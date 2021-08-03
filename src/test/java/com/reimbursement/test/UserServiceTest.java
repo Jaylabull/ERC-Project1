@@ -32,11 +32,12 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	public void testSignUp() {
+	public void testSignIn() {
 		UserRole r1 = new UserRole("EMPLOYEE");
 		UserRole r2 = new UserRole("FINANCIAL MANAGER");
 		
-		User u = new User(1, "User", "Test", "test@email.com", "testpassword", r1);
+		
+		User u = new User(1, "User123", "User", "Test", "test@email.com", "testpassword", r1);
 		User notUser = new User(0, "User", "Test", "test@email.com", "testpassword", r2);
 		
 		when(uDao.selectByUsername(anyString())).thenReturn(u);

@@ -14,7 +14,7 @@ async function login(e){
 	}
 	
 	console.log(user);
-	
+
 	
 	try{
 		let req = await fetch('http://localhost:8080/ERCProject1/api/login', {

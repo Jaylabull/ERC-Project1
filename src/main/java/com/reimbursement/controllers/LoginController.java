@@ -28,6 +28,7 @@ public class LoginController {
 			buffer.append(line);
 			buffer.append(System.lineSeparator());
 		}
+		
 		String data = buffer.toString();
 		System.out.println(data);
 		
@@ -44,7 +45,7 @@ public class LoginController {
 			User u = uServ.signIn(username, password);
 			System.out.println(u);
 			
-			req.getSession().setAttribute("id", u.getUserId());
+			req.getSession().setAttribute("user_id", u.getUserId());
 			res.setStatus(HttpServletResponse.SC_OK);
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");

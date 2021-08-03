@@ -8,17 +8,21 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
+     <welcome-file>resources/html/login.html</welcome-file>
   </welcome-file-list>
   
   
-  <servlet>
-  	<servlet-name>LoginServlet</servlet-name>
-  	<servlet-class>com.reimbursement.servlets.LoginServlet</servlet-class>
+  
+  
+   <servlet>
+  	<servlet-name>MasterViewServlet</servlet-name>
+  	<servlet-class>com.reimbursement.servlets.MasterViewServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
   </servlet>
   
-  <servlet-mapping>
-  <servlet-name>LoginServlet</servlet-name>
-  <url-pattern>/login</url-pattern>
+    <servlet-mapping>
+  	<servlet-name>MasterViewServlet</servlet-name>
+  	<url-pattern>/login</url-pattern>
   </servlet-mapping>
   
     <servlet>

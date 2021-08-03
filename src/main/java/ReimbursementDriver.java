@@ -10,13 +10,14 @@ import com.reimbursement.models.ReimbursementStatus;
 import com.reimbursement.models.ReimbursementType;
 import com.reimbursement.models.User;
 import com.reimbursement.models.UserRole;
+import com.reimbursement.services.UserServices;
 
 public class ReimbursementDriver {
 
 	public static void main(String[] args) {
 	
 		UserDaoDB uDao = new UserDaoDB();
-		
+		UserServices uServ = new UserServices(uDao);
 		ReimbursementDaoDB rDao = new ReimbursementDaoDB();
 		
 				
@@ -64,12 +65,18 @@ public class ReimbursementDriver {
 //		Reimbursement r4 = new Reimbursement(555, u3, u, "Staying at the Ritz for the Weekend", rt3, rs3);
 //		rDao.createReim(r4);
 		
-		List<Reimbursement> rList = new ArrayList<Reimbursement>();
+//		List<Reimbursement> rList = new ArrayList<Reimbursement>();
 //		rList.add(r);
 //		rList.add(r1);
 //		rList.add(r2);
 //		rList.add(r3);
 //		rList.add(r4);
+		
+		
+	//	User us = uServ.signIn("MikeJones3077", "password");
+	//	System.out.println(us);
+		
+		
 		
 //		HibernateUtil.closeSes();
 	}

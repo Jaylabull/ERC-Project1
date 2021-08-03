@@ -41,9 +41,9 @@ public class UserServiceTest {
 		
 		when(uDao.selectByUsername(anyString())).thenReturn(u);
 		
-		User signedIn = uServ.signIn("User", "testpassword");
+		User signedIn = uServ.signIn("User123", "testpassword");
 		
-		assertEquals(u.getUserId(), signedIn.getUserId());
+		assertEquals(u.getUsername(), signedIn.getUsername());
 	}
 
 	

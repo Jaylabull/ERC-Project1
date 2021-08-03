@@ -16,31 +16,36 @@ public class ReimbursementDriver {
 
 	public static void main(String[] args) {
 	
-		UserDaoDB uDao = new UserDaoDB();
-		UserServices uServ = new UserServices(uDao);
-		ReimbursementDaoDB rDao = new ReimbursementDaoDB();
+		 UserDaoDB uDao = new UserDaoDB();
+		 UserServices uServ = new UserServices(uDao);
 		
-				
-		UserRole ur1 = new UserRole(1, "EMPLOYEE");
-		UserRole ur2 = new UserRole(2, "FINANCIAL MANAGER");
+//	User u = uServ.signIn("JazmineSullivan1430", "password");
+//	
+//	System.out.println(u);
 		
-		ReimbursementStatus rs1 = new ReimbursementStatus(1, "PENDING");
-		ReimbursementStatus rs2 = new ReimbursementStatus(2, "APPROVED");
-		ReimbursementStatus rs3 = new ReimbursementStatus(3, "DENIED");
-		
-		
-		ReimbursementType rt1 = new ReimbursementType(1, "TRAVEL");
-		ReimbursementType rt2 = new ReimbursementType(2, "FOOD");
-		ReimbursementType rt3 = new ReimbursementType(3, "LODGING");
-		ReimbursementType rt4 = new ReimbursementType(4, "OTHER");
-		
-
-		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password", ur1);
-		User u1 = new User("Mike", "Jones", "mj56@mail.com", "password", ur1);
-		User u2 = new User("Warren", "Buffet", "wb@mail.com", "password", ur2);
-		User u3 = new User("Lofti", "Hiphop", "lhb@mail.com", "password", ur1);
-		User u4 = new User("String", "Builder", "sb@mail.com", "password", ur2);
-		User u5 = new User("Mickey", "Mouse", "mm@mail.com", "password", ur2);
+//		ReimbursementDaoDB rDao = new ReimbursementDaoDB();
+//		
+//				
+//		UserRole ur1 = new UserRole(1, "EMPLOYEE");
+//		UserRole ur2 = new UserRole(2, "FINANCIAL MANAGER");
+//		
+//		ReimbursementStatus rs1 = new ReimbursementStatus(1, "PENDING");
+//		ReimbursementStatus rs2 = new ReimbursementStatus(2, "APPROVED");
+//		ReimbursementStatus rs3 = new ReimbursementStatus(3, "DENIED");
+//		
+//		
+//		ReimbursementType rt1 = new ReimbursementType(1, "TRAVEL");
+//		ReimbursementType rt2 = new ReimbursementType(2, "FOOD");
+//		ReimbursementType rt3 = new ReimbursementType(3, "LODGING");
+//		ReimbursementType rt4 = new ReimbursementType(4, "OTHER");
+//		
+//
+//		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password", ur1);
+//		User u1 = new User("Mike", "Jones", "mj56@mail.com", "password", ur1);
+//		User u2 = new User("Warren", "Buffet", "wb@mail.com", "password", ur2);
+//		User u3 = new User("Lofti", "Hiphop", "lhb@mail.com", "password", ur1);
+//		User u4 = new User("String", "Builder", "sb@mail.com", "password", ur2);
+//		User u5 = new User("Mickey", "Mouse", "mm@mail.com", "password", ur2);
 		
 //		uDao.createUser(u);
 //		uDao.createUser(u1);
@@ -73,8 +78,8 @@ public class ReimbursementDriver {
 //		rList.add(r4);
 		
 		
-	//	User us = uServ.signIn("MikeJones3077", "password");
-	//	System.out.println(us);
+//		User us = uServ.signIn("JazmineSullivan1430", "password");
+//		System.out.println(us);
 		
 		
 		

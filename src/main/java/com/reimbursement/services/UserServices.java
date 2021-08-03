@@ -32,9 +32,17 @@ public class UserServices {
 	
 	public User signIn(String username, String password) throws UserDoesNotExistException, InvalidCredentialsException{
 		User user = new User();
+		
+		System.out.println(username);
+		System.out.println(password);
+		
 		user = uDao.selectByUsername(username);
 		
-		if(!user.equals(user)) {
+		System.out.println(user);
+		
+		if(user.getUsername() == null) {
+			
+			System.out.println("Checking user bc its not working");
 			Logging.logger.warn("User tried logging in with a username that does not exist.");
 			throw new UserDoesNotExistException();
 		}

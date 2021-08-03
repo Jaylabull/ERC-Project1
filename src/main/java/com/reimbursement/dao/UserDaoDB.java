@@ -35,8 +35,8 @@ public class UserDaoDB implements UserDao {
 	
 	public User selectByUsername(String username) {
 		Session ses = HibernateUtil.getSession();
-		User user = ses.get(User.class, username);
-		//User user = ses.createQuery("from User where username=:username", User.class).setString(username, username).uniqueResult();
+		//User user = ses.get(User.class, username);
+		User user = ses.createQuery("from User where user_name=:username", User.class).setString("username", username).uniqueResult();
 		return user;
 	}
 	

@@ -20,6 +20,9 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name = "reimbursements")
@@ -27,6 +30,7 @@ public class Reimbursement {
 	
 	@Id
 	@Column(name = "reimb_id", nullable = false, unique = true)
+	//@JsonIgnoreProperties(value= {"hibernateLazyInitializer", "handler"})
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int reimbursement_id;
 	
@@ -43,11 +47,12 @@ public class Reimbursement {
 	@Column(name = "reimb_resolve", nullable = true)
 	private Date reimbursement_resolv;
 	
-	
+	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "reimb_author", referencedColumnName = "user_id")
 	private User rAuthor;
 	
+	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="reimb_resolver",  referencedColumnName = "user_id")
 	private User rResolver;
@@ -231,7 +236,7 @@ public class Reimbursement {
 	public String toString() {
 		return "Reimbursement [reimbursement_id=" + reimbursement_id + ", reimbursement_amt=" + reimbursement_amt
 				+ ", reimbursement_submt=" + reimbursement_submt + ", reimbursement_resolv=" + reimbursement_resolv
-				+ ", rAuthor=" + rAuthor + ", rResolver=" + rResolver + ", reimbursement_despt=" + reimbursement_despt
+				+ ", rAuthor=" + rAuthor.getUsername() + ", rResolver=" + rResolver.getUsername() + ", reimbursement_despt=" + reimbursement_despt
 				+ ", rType=" + rType + ", rStatus=" + rStatus + "]";
 	}
 

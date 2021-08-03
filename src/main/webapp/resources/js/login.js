@@ -1,7 +1,7 @@
 /**
  * 
  */
- let form = document.getElementById("login").addEventListener('submit', login);
+ let form = document.getElementById('login').addEventListener('submit', login);
 
 async function login(e){
 	e.preventDefault();
@@ -24,8 +24,10 @@ async function login(e){
 			},
 			body: JSON.stringify(user)
 		});
-		let res = await req.json();
+		let res = await req.text();
+		console.log(res);
 	} catch(e){
+		console.log(e.stack);
 		alert('Username or password incorrect!');
 		return;
 	}

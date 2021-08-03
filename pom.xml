@@ -64,6 +64,13 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.0.17.Final</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core -->
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-core</artifactId>
+    <version>9.0.43</version>
+</dependency>
 
 	</dependencies>
   

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
     <head>
-        <title>Reimbursement System</title>
+        <title>Big AI Reimbursement System LOGIN</title>
         <meta charset="utf-8">
+        <link rel = "stylesheet" href = "../css/style.css">
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
     </head>
  
     <body>
 
-        <h1>Reimbursement System</h1>
+        <h1>Welcome to Big AI Reimbursement System</h1>
         <h3>Please sign-in</h3>
 
-        <!-- You can include the method and action attributes to tell the form where to send the inforation-->
-        <!-- And how it should be sent -->
-        <form id='login' action = "login" method = "post">
+        <form class ='form' id='login' action = "login" method = "post">
             <label for='username'>Username: </label>
             <input type='text' name='username' maxlength='50' required id='username'/>
             <label for='password'>Password: </label>
             <input type='password' name='password' id='password' minlength='8' required/>
             <input type='submit' value='Login' />
         </form>
-        <script src='resources/js/login.js'></script> 
+        <script src="resources/js/login.js"></script> 
     </body>
 </html>

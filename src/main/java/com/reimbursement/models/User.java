@@ -16,10 +16,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@JsonIgnoreProperties(value= {"hibernateLazyInitializer", "handler"})
 @Table(name = "users")
 public class User {
 	
@@ -43,7 +43,6 @@ public class User {
 	@Column(name = "password", nullable = false)
 	private String password;
 	
-
 	@OneToMany(mappedBy = "rResolver", fetch = FetchType.LAZY)
 	private List<Reimbursement> remList = new ArrayList<Reimbursement>();
 	

@@ -1,0 +1,35 @@
+
+:root{
+   --primary-color: #faebd7;
+   --secondary-color: #9cc9dc;
+   --third-color: #0b58aa;
+   --fourth-color: #041952;
+}
+
+*{
+	  font-family: 'News Cycle', sans-serif;
+	   box-sizing: border-box;
+	   color: var(--fourth-color);
+}
+
+body{
+	background-color: var(--primary-color);
+}
+
+
+/* LANDING PAGE */
+.container{
+	display: flex;
+	align-items: center;
+	margin: 20px;
+}
+
+
+/* LOGIN PAGE */
+
+.form{
+	align-items: center;
+	display: flex-box;
+	box-sizing: border-box;
+}
+

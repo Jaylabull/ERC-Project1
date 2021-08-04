@@ -49,7 +49,9 @@ public class LoginController {
 			res.setStatus(HttpServletResponse.SC_OK);
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");
-			res.getWriter().println("User signed in!");
+			//res.getWriter().println("User signed in!");
+			res.getWriter().write(new ObjectMapper().writeValueAsString(u));
+			
 		}
 		catch(Exception e) {
 			e.printStackTrace();

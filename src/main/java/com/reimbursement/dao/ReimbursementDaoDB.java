@@ -6,6 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.reimbursement.models.Reimbursement;
 import com.reimbursement.models.ReimbursementStatus;
+import com.reimbursement.models.ReimbursementType;
+import com.reimbursement.models.User;
+import com.reimbursement.models.UserRole;
 import com.reimbursement.util.HibernateUtil;
 
 public class ReimbursementDaoDB implements ReimbursementDao{
@@ -38,6 +41,14 @@ public class ReimbursementDaoDB implements ReimbursementDao{
 		List<Reimbursement> rList = ses.createQuery("from Reimbursement", Reimbursement.class).list();
 		return rList;
 	}
+	
+	public ReimbursementType selectByRType(String rType) {
+		Session ses = HibernateUtil.getSession();
+		ReimbursementType rt = ses.get(ReimbursementType.class, rType);
+		ses.update(rt);
+		return rt;
+}
+	
 	
 //	public List<ReimbursementStatus> selectReimbursementByStatus(String status){
 //		Session ses = HibernateUtil.getSession();

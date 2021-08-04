@@ -30,14 +30,13 @@ public class ReimbursementServices {
 		
 		return rList;
 	}
+
+//	public List<Reimbursement> getAllRemib(){
+//		return rDao.selectAllReimb();
+//	}
 	
-	//Selects user by id
-	public List<Reimbursement> getAllRemib(){
-		return rDao.selectAllReimb();
-	}
-	
-	public void addReimbursement(int amt, String descp) {
-		Reimbursement r = new Reimbursement(amt, descp);
+	public void addReimbursement(int amt, String descp, ReimbursementType type) {
+		Reimbursement r = new Reimbursement(amt, descp, type);
 		rDao.createReim(r);
 	}
 	

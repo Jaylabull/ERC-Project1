@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.reimbursement.dao.ReimbursementDaoDB;
 import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.models.Reimbursement;
+import com.reimbursement.models.ReimbursementType;
 import com.reimbursement.models.User;
 import com.reimbursement.services.ReimbursementServices;
 import com.reimbursement.services.UserServices;
@@ -51,11 +52,13 @@ public class ReimbursementController {
 			JsonNode parsedObj = mapper.readTree(data);
 			
 			int userId = Integer.parseInt(parsedObj.get("userId").asText());
+			int amount = Integer.parseInt(parsedObj.get("userId").asText());
 			String content = parsedObj.get("content").asText();
 			User u = uServ.getUserById(userId);
-			//ReimbursementType rt = 
-			//rServ.addReimbursement(userId, content, rt);
-			rServ.addReimbursement(userId, content);
+			
+//			ReimbursementType rType = rServ.se
+//			rServ.addReimbursement(u, amount, content, rType);
+			
 			
 			ObjectNode ret = mapper.createObjectNode();
 			ret.put("message", "successfully submitted a new reimbursment");

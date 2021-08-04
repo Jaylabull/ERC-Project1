@@ -25,7 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
-@JsonIgnoreProperties(value= {"hibernateLazyInitializer", "handler"})
 @Table(name = "reimbursements")
 public class Reimbursement {
 	
@@ -82,6 +81,14 @@ public class Reimbursement {
 		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_despt = reimbursement_despt;
+	}
+	
+
+	public Reimbursement(int reimbursement_amt, String reimbursement_despt, ReimbursementType rType) {
+		super();
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_despt = reimbursement_despt;
+		this.rType = rType;
 	}
 
 
@@ -240,6 +247,8 @@ public class Reimbursement {
 				+ ", rAuthor=" + rAuthor.getUsername() + ", rResolver=" + rResolver.getUsername() + ", reimbursement_despt=" + reimbursement_despt
 				+ ", rType=" + rType + ", rStatus=" + rStatus + "]";
 	}
+	
+	
 
 
 }

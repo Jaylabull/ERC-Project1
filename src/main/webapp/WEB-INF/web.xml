@@ -8,7 +8,7 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-     <welcome-file>./html/login.html</welcome-file>
+     <welcome-file>resources/html/landingpg.html</welcome-file>
   </welcome-file-list>
   
   
@@ -20,7 +20,7 @@
   
     <servlet-mapping>
   	<servlet-name>MasterViewServlet</servlet-name>
-  	<url-pattern>/login</url-pattern>
+  	<url-pattern>/landingpg</url-pattern>
   </servlet-mapping> 
   
    <servlet>

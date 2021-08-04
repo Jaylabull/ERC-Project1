@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.reimbursement.controllers.LoginController;
 
-
+import com.reimbursement.controllers.LogoutController;
 
 public class ServletJSONHelper {
 
@@ -19,9 +19,9 @@ public class ServletJSONHelper {
 			case "/ERCProject1/api/login":
 				LoginController.login(req, res);
 				break;
-//			case "/ERCProject1/api/logout":
-//				LogoutController.logout(req, res);
-//				break;
+			case "/ERCProject1/api/logout":
+				LogoutController.logout(req, res);
+				break;
 //			case "/SERCProject1/api/posts":
 //				PostsController.handlePosts(req, res);
 //				break;

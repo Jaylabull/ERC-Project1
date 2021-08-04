@@ -56,5 +56,9 @@ public class UserServices {
 		}
 	}
 	
+	public User getUserById(int id) {
+		return uDao.selectByUserId(id);
+	}
+	
 	
 }//End UserServices Class

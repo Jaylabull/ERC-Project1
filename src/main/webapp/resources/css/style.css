@@ -19,11 +19,20 @@ body{
 
 /* LANDING PAGE */
 .container{
-	display: flex;
+	display: flex-box;
 	align-items: center;
 	margin: 20px;
 }
 
+.btn{
+	color: var(--secondary-color);
+}
+
+.employee-btn.manager-btn{
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	
+}
 
 /* LOGIN PAGE */
 

@@ -22,8 +22,8 @@ public class ServletJSONHelper {
 			case "/ERCProject1/api/logout":
 				LogoutController.logout(req, res);
 				break;
-//			case "/SERCProject1/api/posts":
-//				PostsController.handlePosts(req, res);
+//			case "/SERCProject1/api/employeeHome":
+//				ReimbursementController.handleReimbursements(req, res);
 //				break;
 //			case "/ERCProject1/api/session":
 //				SessionController.getSession(req, res);

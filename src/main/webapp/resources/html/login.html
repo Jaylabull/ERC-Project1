@@ -17,19 +17,13 @@
         <h1>Welcome to Big AI Reimbursement System</h1>
         <h3>Please sign-in</h3>
 
-     <div class = "card grid">
-	      <div class="mb-3">
-			  <label for="formGroupExampleInput" class="form-label">Username:</label>
-			  <input type="text" class="form-control" id="input" placeholder="Username">
-			</div>
-			<div class="mb-3">
-			  <label for="formGroupExampleInput2" for='password' class="form-label">Password:</label>
-			  <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Password">
-			</div>
-			<div class="mb-3">
-				 <input type="submit" value = "login" class="form-control" id="formGroupExampleInput2">
-			</div>
-       </div> 
+      <form class ='form' id='login' action = "login" method = "post">
+            <label for='username'>Username: </label>
+            <input type='text' name='username' maxlength='50' required id='username'/>
+            <label for='password'>Password: </label>
+            <input type='password' name='password' id='password' minlength='8' required/>
+            <input type='submit' value='Login' />
+        </form>
         <script src="resources/js/login.js"></script> 
     </body>
 </html>

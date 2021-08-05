@@ -32,6 +32,6 @@ async function login(e){
 		return;
 	}
 	
-	location.href = 'resources/html/SocialHub.html';
+	location.href = 'resources/html/employeeHome.html';
 }
  

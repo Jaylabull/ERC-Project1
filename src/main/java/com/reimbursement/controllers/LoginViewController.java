@@ -9,8 +9,8 @@ public class LoginViewController {
 
 	public static String fetchLoginPage(HttpServletRequest req) throws ServletException, IOException {
 		System.out.println(req.getContentType());
-		System.out.println("This should return the view landingpg.html");
-		return "resources/html/landingpg.html";
+		System.out.println("This should return the view login.html");
+		return "resources/html/login.html";
 		
 	}
 }

@@ -20,7 +20,7 @@
   
     <servlet-mapping>
   	<servlet-name>MasterViewServlet</servlet-name>
-  	<url-pattern>/landingpg</url-pattern>
+  	<url-pattern>/login</url-pattern>
   </servlet-mapping> 
   
    <servlet>

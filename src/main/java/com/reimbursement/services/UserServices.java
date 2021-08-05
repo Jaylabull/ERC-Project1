@@ -41,8 +41,6 @@ public class UserServices {
 		System.out.println(user);
 		
 		if(!user.getUsername().equals(username)) {
-			
-			System.out.println("Checking user bc its not working");
 			Logging.logger.warn("User tried logging in with a username that does not exist.");
 			throw new UserDoesNotExistException();
 		}

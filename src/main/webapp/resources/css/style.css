@@ -2,8 +2,9 @@
 :root{
    --primary-color: #ffffff;
    --secondary-color: #9cc9dc;
-   --third-color: #0b58aa;
-   --fourth-color: #041952;
+   --third-color: #A39B8B;
+   --fourth-color: #07020D;
+   --fifth-color: F1E9DB;
 }
 
 *{
@@ -38,7 +39,21 @@ body{
 
 .form{
 	align-items: center;
-	display: flex-box;
+	display: box;
 	box-sizing: border-box;
 }
+
+.grid{
+	display: grid;
+	margin: 25px;
+}
+
+.card{
+	padding: 32px;	
+}
+
+.label{
+	padding:25px;
+}
+
 

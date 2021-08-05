@@ -4,7 +4,7 @@
    --secondary-color: #9cc9dc;
    --third-color: #A39B8B;
    --fourth-color: #07020D;
-   --fifth-color: F1E9DB;
+   --fifth-color: #F1E9DB;
 }
 
 *{
@@ -20,27 +20,75 @@ body{
 
 /* LANDING PAGE */
 .container{
-	display: flex-box;
+	margin: auto;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	margin: 20px;
-}
-
-.btn{
-	color: var(--secondary-color);
-}
-
-.employee-btn.manager-btn{
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
+	padding: 15px 15px;
 	
 }
+.form-container{
+	margin: auto;
+	display:block;
+}
+
+
+.btn-container a{
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+button{
+	text-align: center;
+	border: 2px solid var( --third-color);
+	color: var( --fourth-color);
+	text-decoration: none;
+	background-color: var(--primary-color); 
+	width: 300px;
+}
+
 
 /* LOGIN PAGE */
 
+input{
+	text-align: center;
+	border: 2px solid var( --third-color);
+	color: var( --third-color);
+	text-decoration: none;
+	background-color: var(--primary-color); 
+	width: 300px;
+}
+
+label{
+	padding:10px;
+	display: block;
+	
+}
+
+.container{
+	margin: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	margin: 20px;
+	padding: 15px 15px;
+	
+}
+
+.smt-btn{
+	color: black;
+	display: block;
+    margin-top: 15px;
+    border: 2px solid var(  --fourth-color);
+}
 .form{
 	align-items: center;
-	display: box;
 	box-sizing: border-box;
+	display: table-caption;
 }
 
 .grid{

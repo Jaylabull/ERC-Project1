@@ -3,6 +3,7 @@ package com.reimbursement.dao;
 import java.util.List;
 
 import com.reimbursement.models.Reimbursement;
+import com.reimbursement.models.ReimbursementType;
 
 public interface ReimbursementDao {
 	
@@ -13,5 +14,9 @@ public interface ReimbursementDao {
 	public Reimbursement selectByReimbId(int reimbId);
 	
 	public List<Reimbursement> selectAllReimb();
+	
+//	public ReimbursementType selectByRType(int rType);
+	
+	public List<Reimbursement> selectPendingReimb();
 	
 }

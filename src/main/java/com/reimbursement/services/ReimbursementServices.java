@@ -38,15 +38,10 @@ public class ReimbursementServices {
 		rDao.createReim(r);
 	}
 	
+	//Select Pending Reimbursements
+	public List<Reimbursement> selectPendingReimb(){
+		return rDao.selectPendingReimb();
+	}
 	
-	
-	//Select reimbursements by status 
-//	public List<Reimbursement> selectReimbursementByStatus(String status){
-//		
-//		List<Reimbursement> rList = rDao.selectReimbursementByStatus(status);
-//		
-//		return rList;	
-//		
-//	}
 	
 }

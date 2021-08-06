@@ -26,7 +26,7 @@ public class ReimbursementController {
 	private static ReimbursementServices rServ = new ReimbursementServices(rDao, uDao);
 	private static UserServices uServ = new UserServices(uDao);
 	
-	public static void handleReimbursements(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException{
+	public static void selectAllReimbursements(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException{
 		if(req.getMethod().equals("GET")) {
 			
 			List<Reimbursement> rList = rServ.selectAllReimbursements();

@@ -42,13 +42,17 @@ public class ReimbursementDaoDB implements ReimbursementDao{
 		return rList;
 	}
 	
-	public ReimbursementType selectByRType(int rType) {
-		Session ses = HibernateUtil.getSession();
-		ReimbursementType rt = ses.createQuery("from ReimbursementType where user_id =", ReimbursementType.class).uniqueResult();
-		return rt;
-}
+//	public ReimbursementType selectByRType(int rType) {
+//		Session ses = HibernateUtil.getSession();
+//		ReimbursementType rt = ses.createQuery("from ReimbursementType where user_id =", ReimbursementType.class).uniqueResult();
+//		return rt;
+//}
 
-	
+	public List<Reimbursement> selectPendingReimb(){
+		Session ses = HibernateUtil.getSession();
+		List<Reimbursement> rList = ses.createQuery("from Reimbursement where reimb_status_FK = 1", Reimbursement.class ).list();
+		return rList;
+	}
 	
 	
 }

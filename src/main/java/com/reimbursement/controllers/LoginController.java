@@ -28,7 +28,7 @@ public class LoginController {
 		while((line = reader.readLine()) != null) {
 			buffer.append(line);
 			buffer.append(System.lineSeparator());
-		}
+		}	
 		
 		String data = buffer.toString();
 		System.out.println(data);
@@ -69,9 +69,7 @@ public class LoginController {
 			res.getWriter().println("Username or password incorrect.");
 			
 		}
-
-		
-		
+	
 		
 	}
 	

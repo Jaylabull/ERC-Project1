@@ -13,4 +13,4 @@ public class LoginViewController {
 		return "resources/html/login.html";
 		
 	}
-}
+}	

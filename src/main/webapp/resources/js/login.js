@@ -31,7 +31,9 @@ async function login(e){
 		alert('Username or password incorrect!');
 		return;
 	}
+
 	
+
 	location.href = 'resources/html/employeeHome.html';
 }
  

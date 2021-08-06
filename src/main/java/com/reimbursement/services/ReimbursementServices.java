@@ -1,5 +1,6 @@
 package com.reimbursement.services;
 
+import java.util.Date;
 import java.util.List;
 
 import com.reimbursement.dao.ReimbursementDaoDB;
@@ -30,13 +31,10 @@ public class ReimbursementServices {
 		
 		return rList;
 	}
-
-//	public List<Reimbursement> getAllRemib(){
-//		return rDao.selectAllReimb();
-//	}
 	
-	public void addReimbursement(int amt, String descp, ReimbursementType type) {
-		Reimbursement r = new Reimbursement(amt, descp, type);
+	//Adds new reimbursement
+	public void addReimbursement(int userId, int amt, Date date, String descp, ReimbursementType type, ReimbursementStatus status) {
+		Reimbursement r = new Reimbursement(userId ,amt, date, descp, type, status);
 		rDao.createReim(r);
 	}
 	

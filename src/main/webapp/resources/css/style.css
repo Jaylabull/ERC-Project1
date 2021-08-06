@@ -7,28 +7,58 @@
    --fifth-color: #F1E9DB;
 }
 
+/* UNIVERAL PAGES */
+
 *{
 	  font-family: 'News Cycle', sans-serif;
 	   box-sizing: border-box;
 	   color: var(--fourth-color);
+	   background-color: var( --fifth-color); 
 }
 
-body{
-	background-color: var(--primary-color);
+input{
+	text-align: center;
+	border: 2px solid var( --third-color);
+	color: var( --third-color);
+	text-decoration: none;
+	background-color: var(--primary-color); 
+	width: 450px;
+	height: 35px
 }
 
+label{
+	padding:10px;
+	display: block;	
+}
 
-/* LANDING PAGE */
+.button{
+	text-align: center;
+	border: 2px solid var( --third-color);
+	color: var( --fourth-color);
+	text-decoration: none;
+	background-color: var(--primary-color); 
+	width: 500px;
+	height: 50px;
+}
+
+ .body{
+ 
+	  background-color: var( --fifth-color);
+}   
+
 .container{
 	margin: auto;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	margin: 20px;
 	padding: 15px 15px;
 	
 }
+
+
+/* LANDING PAGE */
+
 .form-container{
 	margin: auto;
 	display:block;
@@ -41,50 +71,22 @@ body{
     text-align: center;
 }
 
-button{
-	text-align: center;
-	border: 2px solid var( --third-color);
-	color: var( --fourth-color);
-	text-decoration: none;
-	background-color: var(--primary-color); 
-	width: 300px;
-}
-
-
 /* LOGIN PAGE */
-
-input{
-	text-align: center;
-	border: 2px solid var( --third-color);
-	color: var( --third-color);
-	text-decoration: none;
-	background-color: var(--primary-color); 
-	width: 300px;
-}
-
-label{
-	padding:10px;
-	display: block;
-	
-}
-
-.container{
-	margin: auto;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-	margin: 20px;
-	padding: 15px 15px;
-	
-}
 
 .smt-btn{
 	color: black;
 	display: block;
-    margin-top: 15px;
-    border: 2px solid var(  --fourth-color);
+    margin-top: 25px;
+    border: 2px solid var( --fourth-color);
+    width: 450px;
+    height: 40px;
 }
+
+
+.smt-btn:hover{
+	 border: 2px solid var(  --third-color);
+}
+
 .form{
 	align-items: center;
 	box-sizing: border-box;
@@ -103,5 +105,42 @@ label{
 .label{
 	padding:25px;
 }
+
+/* EMPLOYEE PAGE */
+
+.nav-item{
+	list-style-type: none;
+	text-decoration: none; 
+	padding: 10px 5px;
+    margin: 10px 10px;
+} 
+
+#nav-item a{
+	color: var(--fourth-color);
+	font-size: 20px;
+}
+
+.btn{
+	margin: 25px;
+    display: block;
+    width: 400px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border: 2px solid var( --third-color);
+}
+
+.btn:hover{
+	border: 2px solid var( --fourth-color);
+}
+
+.emp-logout{
+	border: 2px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--fourth-color);
+}
+
+
+
+
 
 

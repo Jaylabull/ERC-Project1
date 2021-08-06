@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.reimbursement.dao.UserDao;
 import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.services.UserServices;
@@ -45,10 +46,18 @@ public class LoginController {
 			User u = uServ.signIn(username, password);
 			System.out.println(u);
 			
+			String role = u.getuRole().getUserRole();
+			req.getSession().setAttribute("uRole", role);
+			
 			req.getSession().setAttribute("user_id", u.getUserId());
 			res.setStatus(HttpServletResponse.SC_OK);
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");
+			
+			ObjectNode ur = mapper.createObjectNode();
+			ur.put("user_id", u.getUserId());
+			ur.put("uRole", role);
+			
 			res.getWriter().println("User signed in!");
 			//res.getWriter().write(new ObjectMapper().writeValueAsString(u));
 			

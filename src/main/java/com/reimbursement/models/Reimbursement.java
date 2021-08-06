@@ -102,6 +102,20 @@ public class Reimbursement {
 		this.rStatus = rStatus;
 	}
 	
+	
+	
+	public Reimbursement(int reimbursement_id, int reimbursement_amt, Date reimbursement_submt,
+			String reimbursement_despt, ReimbursementType rType, ReimbursementStatus rStatus) {
+		super();
+		this.reimbursement_id = reimbursement_id;
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_submt = reimbursement_submt;
+		this.reimbursement_despt = reimbursement_despt;
+		this.rType = rType;
+		this.rStatus = rStatus;
+	}
+
+
 	public Reimbursement(int reimbursement_amt, User rAuthor, User rResolver, String reimbursement_despt,
 			ReimbursementType rType, ReimbursementStatus rStatus) {
 		super();

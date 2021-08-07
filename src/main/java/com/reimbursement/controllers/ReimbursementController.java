@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.reimbursement.dao.ReimbursementDaoDB;
 import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.models.Reimbursement;
+import com.reimbursement.models.ReimbursementStatus;
 import com.reimbursement.models.ReimbursementType;
 import com.reimbursement.models.User;
 import com.reimbursement.services.ReimbursementServices;
@@ -25,9 +26,12 @@ public class ReimbursementController {
 	private static UserDaoDB uDao = new UserDaoDB();
 	private static ReimbursementServices rServ = new ReimbursementServices(rDao, uDao);
 	private static UserServices uServ = new UserServices(uDao);
+	private static ReimbursementType rType = new ReimbursementType();
+	private static ReimbursementStatus rStatus = new ReimbursementStatus();
 	
 	public static void selectAllReimbursements(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException{
 		if(req.getMethod().equals("GET")) {
+			
 			
 			List<Reimbursement> rList = rServ.selectAllReimbursements();
 			System.out.println(rList);
@@ -36,36 +40,35 @@ public class ReimbursementController {
 			res.getWriter().write(new ObjectMapper().writeValueAsString(rList));
 			
 		}
-		else {
-			
-			StringBuilder buffer = new StringBuilder();
-			BufferedReader reader = req.getReader();
-			
-			String line;
-			while((line = reader.readLine()) != null) {
-				buffer.append(line);
-				buffer.append(System.lineSeparator());
-			}
-			String data = buffer.toString();
-			System.out.println(data);
-			ObjectMapper mapper = new ObjectMapper();
-			JsonNode parsedObj = mapper.readTree(data);
-			
-			int userId = Integer.parseInt(parsedObj.get("userId").asText());
-			int amount = Integer.parseInt(parsedObj.get("userId").asText());
-			String content = parsedObj.get("content").asText();
-			User u = uServ.getUserById(userId);
+//		else {
+//		}
+//			StringBuilder buffer = new StringBuilder();
+//			BufferedReader reader = req.getReader();
+//			
+//			String line;
+//			while((line = reader.readLine()) != null) {
+//				buffer.append(line);
+//				buffer.append(System.lineSeparator());
+//			}
+//			String data = buffer.toString();
+//			System.out.println(data);
+//			ObjectMapper mapper = new ObjectMapper();
+//			JsonNode parsedObj = mapper.readTree(data);
+//			
+//			int userId = Integer.parseInt(parsedObj.get("userId").asText());
+//			int amount = Integer.parseInt(parsedObj.get("userId").asText());
+//			String content = parsedObj.get("content").asText();
+//			User u = uServ.getUserById(userId);
 			
 //			ReimbursementType rType = rServ.se
 //			rServ.addReimbursement(u, amount, content, rType);
 			
+//			ObjectNode ret = mapper.createObjectNode();
+//			ret.put("message", "successfully submitted a new reimbursment");
+//			res.addHeader("Access-Control-Allow-Origin", "*");
+//			res.setHeader("Access-Control-Allow-Methods", "POST");
+//			res.getWriter().write(new ObjectMapper().writeValueAsString(ret));
 			
-			ObjectNode ret = mapper.createObjectNode();
-			ret.put("message", "successfully submitted a new reimbursment");
-			res.addHeader("Access-Control-Allow-Origin", "*");
-			res.setHeader("Access-Control-Allow-Methods", "POST");
-			res.getWriter().write(new ObjectMapper().writeValueAsString(ret));
-			
-		}
+	
 	}
 }

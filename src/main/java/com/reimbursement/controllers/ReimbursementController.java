@@ -70,13 +70,14 @@ public class ReimbursementController {
 //			System.out.println(userId);
 			User u = uServ.getUserById(userId);
 			
-			ReimbursementType rType = new ReimbursementType();
+//			ReimbursementType rType = new ReimbursementType();
+//			rType.getTypeId();
+			
+			ReimbursementType rType = rDao.selectByRType(userId);
 			
 			rServ.addReimbursements(u, amount, content, rType);
 			
-//			String role = u.getuRole().getUserRole();
-//			req.getSession().setAttribute("uRole", role);
-//			
+			
 			ObjectNode ret = mapper.createObjectNode();
 			//ret.put("user_id", u.getUserId());
 			//ret.put("uRole", u.getuRole());

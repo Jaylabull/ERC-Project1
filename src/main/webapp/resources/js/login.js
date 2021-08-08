@@ -22,25 +22,28 @@ async function login(e){
 			headers: {
 				'Content-Type': 'application/json'
 			},
+			
 			body: JSON.stringify(user)
 		});
 		let res = await req.text();
 		console.log(res);
+		
+	if(res.role === 'MANAGER'){
+	location.href = '/ERCProject1/managerHome';
+	}else{
+		location.href = '/ERCProject1/employeeHome';
+		
+	}
 	} catch(e){
 		console.log(e.stack);
 		alert('Username or password incorrect!');
 		return;
 	}
-
+/*
 location.href = '/ERCProject1/employeeHome';
-	/*
-	if(res.role === 1){
-	location.href = './employeeHome.html';
-	}else{
-		location.href = './managerHome.html';
-		
-	}
 */
+
+
 
 }
  

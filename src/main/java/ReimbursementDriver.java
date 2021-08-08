@@ -32,14 +32,13 @@ public class ReimbursementDriver {
 //		ReimbursementStatus rs1 = new ReimbursementStatus(1, "PENDING");
 //		ReimbursementStatus rs2 = new ReimbursementStatus(2, "APPROVED");
 //		ReimbursementStatus rs3 = new ReimbursementStatus(3, "DENIED");
-//		
-//		
+		
 //		ReimbursementType rt1 = new ReimbursementType(1, "TRAVEL");
 //		ReimbursementType rt2 = new ReimbursementType(2, "FOOD");
 //		ReimbursementType rt3 = new ReimbursementType(3, "LODGING");
 //		ReimbursementType rt4 = new ReimbursementType(4, "OTHER");
-//		
-//
+		
+
 //		User u = new User("Jazmine", "Sullivan", "js@mail.com", "password", ur1);
 //		User u1 = new User("Mike", "Jones", "mj56@mail.com", "password", ur1);
 //		User u2 = new User("Warren", "Buffet", "wb@mail.com", "password", ur2);
@@ -55,28 +54,28 @@ public class ReimbursementDriver {
 //		uDao.createUser(u5);
 		
 		
-//		Reimbursement r = new Reimbursement(320, u, u2, "Road trip to Cali", rt1, rs3);
-//		rDao.createReim(r);
+//		Reimbursement r5 = new Reimbursement(320, u, u2, "Road trip to Cali", rt1, rs3);
+//		rDao.createReim(r5);
 //		
-//		Reimbursement r1 = new Reimbursement(115, u2, u4 ,"Dinner at STK ATL", rt2, rs1);
-//		rDao.createReim(r1);
+//		Reimbursement r6 = new Reimbursement(115, u2, u4 ,"Dinner at STK ATL", rt2, rs1);
+//		rDao.createReim(r6);
 //		
-//		Reimbursement r2 = new Reimbursement(550, u4, u5, "Trip to NYC", rt1, rs2);
-//		rDao.createReim(r2);
+//		Reimbursement r7 = new Reimbursement(550, u4, u5, "Trip to NYC", rt1, rs2);
+//		rDao.createReim(r7);
 //		
-//		Reimbursement r3 = new Reimbursement(675, u3, u4, "Hotel at DoubleTree LA", rt3, rs3);
-//		rDao.createReim(r3);
-		
-//		Reimbursement r4 = new Reimbursement(555, u3, u, "Staying at the Ritz for the Weekend", rt3, rs3);
-//		rDao.createReim(r4);
+//		Reimbursement r8 = new Reimbursement(675, u3, u4, "Hotel at DoubleTree LA", rt3, rs3);
+//		rDao.createReim(r8);
+//		
+//		Reimbursement r9 = new Reimbursement(555, u3, u, "Staying at the Ritz for the Weekend", rt3, rs3);
+//		rDao.createReim(r9);
 		
 //		List<Reimbursement> rList = new ArrayList<Reimbursement>();
-//		rList.add(r);
-//		rList.add(r1);
-//		rList.add(r2);
-//		rList.add(r3);
-//		rList.add(r4);
-		
+//		rList.add(r5);
+//		rList.add(r6);
+//		rList.add(r7);
+//		rList.add(r8);
+//		rList.add(r9);
+//		
 		
 //		User us = uServ.signIn("JazmineSullivan1430", "password");
 //		System.out.println(us);

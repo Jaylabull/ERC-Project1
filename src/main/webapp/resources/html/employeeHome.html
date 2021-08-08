@@ -11,6 +11,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
     	<!-- 	Personal Style Sheet -->
     	 <link rel="stylesheet" href="resources/css/style.css">
+    	 	 <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
 
@@ -37,11 +38,11 @@
 			</ul>
 		 </div>
      
-        <div id='main'>
+        <div id='header' class= "header">
             <h1>Welcome to Big AI Reimbursement System</h1>
             <h2>Employee Services:</h2>
             <br>
-            
+            </div>
         	<div class = 'container-e-services'>
         	 <button id="submitReimb" class="btn" type="button">Submit a Reimbursement Request</button>
         	 <div class = 'eServ-form'>
@@ -49,20 +50,21 @@
 	        	 <input id = 'eId' type = "number" placeholder ="Enter Employee id" required></input>
 	        	 <input id = 'rAmount' type = "text" placeholder = "Enter Reimbursement Amount" required minlength = '3'></input>
 	        	 <input id = 'description'  type = "text" placeholder = "Enter Description for Reimbursement" required></input> 
-	        	 
-	        	 <input id = 'radio-option' name = 'radio-btn' type = "radio" value = 'TRAVEL'>
-	        	 	<label for = 'travel'>TRAVEL</label> 
-	        	 <input id = 'radio-option' name = 'radio-btn' type = "radio" value = 'FOOD'>
-	        	 	<label for = 'food'>FOOD</label> 
-	        	 <input id = 'radio-option' name = 'radio-btn' type = "radio" value = 'LODGING'>
-	        	 	<label for = 'lodging'>LODGING</label> 
-	        	 <input id = 'radio-option' name = 'radio-btn' type = "radio" value = 'OTHER'>
-	        	 	<label for = 'lodging'>OTHER</label> 
+	        	<div class = 'radio-opts'>
+		        	 <input class = 'radio-input' id = 'radio-option' name = 'radio-btn' type = "radio" value = 'TRAVEL'>
+		        	 	<label class = 'radio-label'for = 'travel'>TRAVEL</label> 
+		        	 <input id = 'radio-option' class = 'radio-input' name = 'radio-btn' type = "radio" value = 'FOOD'>
+		        	 	<label class = 'radio-label' for = 'food'>FOOD</label> 
+		        	 <input id = 'radio-option' class = 'radio-input' name = 'radio-btn' type = "radio" value = 'LODGING'>
+		        	 	<label class = 'radio-label' for = 'lodging'>LODGING</label> 
+		        	 <input id = 'radio-option' class = 'radio-input' name = 'radio-btn' type = "radio" value = 'OTHER'>
+		        	 	<label class = 'radio-label' for = 'lodging'>OTHER</label> 
+	        	 </div> 
         	 </div>
         	 
         	 <button id="viewReimb" class="btn" type="button">View Reimbursements</button>
         	 
-        </div>
+        
   
            <div id="reim-container" >
 			<table class="table reimTable">
@@ -100,8 +102,10 @@
         </div>
         
         </div>
-         <script src='../js/logout.js'></script> 
+        <script src="resources/js/login.js"></script> 
         <script src='resources/js/employee.js'></script>
+        <script src='../js/logout.js'></script> 
+         
         
     </body>
 </html>

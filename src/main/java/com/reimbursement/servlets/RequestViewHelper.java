@@ -21,8 +21,8 @@ public class RequestViewHelper {
 				return LoginViewController.getEmployeeHome(req);
 //			case "/ERCProject1/logout":
 //				return LogoutController.logout(req, null);
-//			case "/ERCProject1/managerHome":
-//				return LoginViewController.getManagerHome(req);
+			case "/ERCProject1/managerHome":
+				return LoginViewController.getManagerHome(req);
 
 			default:
 				return "/ERCProject1/login";

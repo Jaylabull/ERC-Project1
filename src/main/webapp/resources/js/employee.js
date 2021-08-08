@@ -6,9 +6,9 @@ async function getReimbursement(){
 
 
 
-document.getElementById("submitReimb").addEventListener('click', newReimbursement);
+document.getElementById("submitReimb").addEventListener('click', addReimbursements);
 
-async function newReimbursement(e){
+async function addReimbursements(e){
 	e.preventDefault();
 	/*
 	let req = await fetch('http://localhost:8080/ERCProject1/api/session');
@@ -17,7 +17,6 @@ async function newReimbursement(e){
 	let uId = document.getElementById('eId').value;
 	let amount = document.getElementById('rAmount').value;
 	let description = document.getElementById('description').value;
-	
 	let type = document.getElementById('radio-option').value;
 	
 
@@ -26,23 +25,26 @@ let reimbursement = {
 	userId: uId,
 	amount, 
 	content: description,
-	rType: type,
+	rType: type
 
 }
 
 console.log(reimbursement);
-console.log(res);
 
-await fetch('http://localhost:8080/ERCProject1/api/addReimbursements', {
+
+let req = await fetch('http://localhost:8080/ERCProject1/api/addReimbursements', {
 		method: "POST",
-		contentType: "application/json",
+		 headers:{
+                 'Content-Type' : 'application/json'
+             },
+             
 		body: JSON.stringify(reimbursement)
 	});
 	
 	let res = await req.json();
 	console.log(res);
 	
-	location.href = '/ERCProject1/employeeHome';
+	
 }
 
 
@@ -50,6 +52,12 @@ await fetch('http://localhost:8080/ERCProject1/api/addReimbursements', {
 /*
 function populateReim(data) {
 	
+	 headers:{
+                 'Content-Type' : 'application/json'
+             }
+             
+             
+	location.href = '/ERCProject1/employeeHome';
 	
 	
 	forEach(postObj of data){

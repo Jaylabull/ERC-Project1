@@ -8,6 +8,7 @@ import com.reimbursement.dao.UserDaoDB;
 import com.reimbursement.models.Reimbursement;
 import com.reimbursement.models.ReimbursementStatus;
 import com.reimbursement.models.ReimbursementType;
+import com.reimbursement.models.User;
 
 
 public class ReimbursementServices {
@@ -33,8 +34,8 @@ public class ReimbursementServices {
 	}
 	
 	//Adds new reimbursement
-	public void addReimbursement(int userId, int amt, String descp, ReimbursementType type) {
-		Reimbursement r = new Reimbursement(userId ,amt, descp, type);
+	public void addReimbursements(User rAuthor, int amt, String descp, ReimbursementType type) {
+		Reimbursement r = new Reimbursement(rAuthor ,amt, descp, type);
 		rDao.createReim(r);
 	}
 	

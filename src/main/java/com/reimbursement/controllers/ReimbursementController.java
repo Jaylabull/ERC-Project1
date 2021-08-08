@@ -61,17 +61,27 @@ public class ReimbursementController {
 			JsonNode parsedObj = mapper.readTree(data);
 			
 			
-			int userId = Integer.parseInt(parsedObj.get("user_id").asText());
+			
+			
+			int userId = Integer.parseInt(parsedObj.get("userId").asText());
 			int amount = Integer.parseInt(parsedObj.get("amount").asText());
 			String content = parsedObj.get("content").asText();
+			//int roleId = Integer.parseInt(parsedObj.get("roleId").asText());
+//			System.out.println(userId);
 			User u = uServ.getUserById(userId);
 			
-			//pass through type
 			ReimbursementType rType = new ReimbursementType();
 			
-			rServ.addReimbursement(userId, amount, content, rType);
+			rServ.addReimbursements(u, amount, content, rType);
 			
+//			String role = u.getuRole().getUserRole();
+//			req.getSession().setAttribute("uRole", role);
+//			
 			ObjectNode ret = mapper.createObjectNode();
+			//ret.put("user_id", u.getUserId());
+			//ret.put("uRole", u.getuRole());
+		
+			
 			ret.put("message", "successfully submitted a new reimbursment");
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");

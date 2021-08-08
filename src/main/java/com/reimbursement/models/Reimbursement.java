@@ -104,11 +104,14 @@ public class Reimbursement {
 	
 	
 	
-	public Reimbursement(int reimbursement_id, int reimbursement_amt,
+	public Reimbursement(User rAuthor , int reimbursement_amt,
 			String reimbursement_despt, ReimbursementType rType) {
-		super();
-		this.reimbursement_id = reimbursement_id;
+		
+		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
+		Date date = new Date();
+		Timestamp rSubmitted = new Timestamp(date.getTime());
+		this.rAuthor = rAuthor;
 		this.reimbursement_despt = reimbursement_despt;
 		this.rType = rType;
 	}

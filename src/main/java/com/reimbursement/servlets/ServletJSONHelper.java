@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.reimbursement.controllers.LoginController;
 import com.reimbursement.controllers.ReimbursementController;
+import com.reimbursement.controllers.SessionController;
 
 import com.reimbursement.controllers.LogoutController;
 
@@ -25,13 +26,13 @@ public class ServletJSONHelper {
 				System.out.println("ServletJSONHelper: Case 2");
 				LogoutController.logout(req, res);
 				break;
-			case "/ERCProject1/api/employeeHome":
+			case "/ERCProject1/api/addReimbursements":
 				System.out.println("ServletJSONHelper: Case 3");
-				ReimbursementController.selectAllReimbursements(req, res);
+				ReimbursementController.addReimbursements(req, res);
 				break;
-//			case "/ERCProject1/api/session":
-//				SessionController.getSession(req, res);
-//				break;
+			case "/ERCProject1/api/session":
+				SessionController.getSession(req, res);
+				break;
 		}
 	}
 }

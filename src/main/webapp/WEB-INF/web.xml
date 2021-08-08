@@ -23,6 +23,16 @@
   	<url-pattern>/login</url-pattern>
   </servlet-mapping> 
   
+    <servlet-mapping>
+  	<servlet-name>MasterViewServlet</servlet-name>
+  	<url-pattern>/employeeHome</url-pattern>
+  </servlet-mapping> 
+  
+    <servlet-mapping>
+  	<servlet-name>MasterViewServlet</servlet-name>
+  	<url-pattern>/managerHome</url-pattern>
+  </servlet-mapping> 
+  
    <servlet>
   	<servlet-name>MasterJSONServlet</servlet-name>
   	<servlet-class>com.reimbursement.servlets.MasterJSONServlet</servlet-class>

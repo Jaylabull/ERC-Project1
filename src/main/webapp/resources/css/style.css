@@ -118,6 +118,8 @@ label{
 #nav-item a{
 	color: var(--fourth-color);
 	font-size: 20px;
+	border: 2px solid var(--third-color);
+	background-color: var(--primary-color);
 }
 
 .btn{
@@ -133,14 +135,10 @@ label{
 	border: 2px solid var( --fourth-color);
 }
 
-.emp-logout{
-	border: 2px solid var(--secondary-color);
+#nav-item#logout{
+		border: 2px solid var(--third-color);
 	background-color: var(--primary-color);
-	color: var(--fourth-color);
 }
-
-
-
 
 
 

@@ -32,8 +32,15 @@ async function login(e){
 		return;
 	}
 
-	
+location.href = '/ERCProject1/employeeHome';
+	/*
+	if(res.role === 1){
+	location.href = './employeeHome.html';
+	}else{
+		location.href = './managerHome.html';
+		
+	}
+*/
 
-	location.href = 'resources/html/employeeHome.html';
 }
  

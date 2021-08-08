@@ -1,15 +1,51 @@
-/* window.onload = getReimbursements(); */
 
 let container = document.getElementById('reim-container');
 
 async function getReimbursement(){
-	let res = await fetch('http://localhost:8080/ERCProject1/api/employeeHome');
-	let data = await res.json();
-	populateReimbursement(data);
-	console.log(data);
+}
+
+
+
+document.getElementById("submitReimb").addEventListener('click', newReimbursement);
+
+async function newReimbursement(e){
+	e.preventDefault();
+	let req = await fetch('http://localhost:8080/ERCProject1/api/session');
+	let res = await req.json();
+	
+	let uId = res.userId;
+	let amount = res.amount.getElementById('rAmount').value;
+	let description = res.content.value;
+	let type = res.document.getElementByName('radio-btn');
+	
+	for(var i = 0; i <type.length; i++){
+		if(type[i].checked){
+			alert(type[i].value);
+			break;
+		}
+	}
+	
+let reimbursement = {
+	
+	userId: uId,
+	amount, 
+	content: description,
+	rType: type,
 
 }
 
+console.log(reimbursement);
+console.log(res);
+
+await fetch('http://localhost:8080/ERCProject1/api/addReimbursements', {
+		method: "POST",
+		contentType: "application/json",
+		body: JSON.stringify(reimbursement)
+	});
+
+	
+	
+}
 
 
 /*

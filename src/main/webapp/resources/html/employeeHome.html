@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
     	<!-- 	Personal Style Sheet -->
-    	 <link rel="stylesheet" href="../css/style.css">
+    	 <link rel="stylesheet" href="resources/css/style.css">
     </head>
     <body>
 
@@ -30,7 +30,9 @@
 			    <a class="nav-link" href="#">Show Profile</a>
 			  </li>
 			  <li class="nav-item">
-			    <button id = 'nav-item logout' class="nav-link emp-logout" href="#">Logout</button>
+			   <a class = 'nav-link' href="/ERCProject1/api/logout" >
+			   	 <button id = 'nav-item logout' class="nav-link emp-logout" >Logout</button>
+			   </a>
 			  </li>
 			</ul>
 		 </div>
@@ -42,6 +44,22 @@
             
         	<div class = 'container-e-services'>
         	 <button id="submitReimb" class="btn" type="button">Submit a Reimbursement Request</button>
+        	 <div class = 'eServ-form'>
+        	 
+	        	 <input id = 'eId' type = "number" placeholder ="Enter Employee id" required></input>
+	        	 <input id = 'rAmount' type = "text" placeholder = "Enter Reimbursement Amount" required minlength = '3'></input>
+	        	 <input id = 'description'  type = "text" placeholder = "Enter Description for Reimbursement" required></input> 
+	        	 
+	        	 <input id = 'travel' class = 'radio-option' name = 'radio-btn' type = "radio" value = '1'>
+	        	 	<label for = 'travel'>TRAVEL</label> 
+	        	 <input id = 'food' class = 'radio-option' name = 'radio-btn' type = "radio" value = '2'>
+	        	 	<label for = 'food'>FOOD</label> 
+	        	 <input id = 'lodging' class = 'radio-option' name = 'radio-btn' type = "radio" value = '3'>
+	        	 	<label for = 'lodging'>LODGING</label> 
+	        	 <input id = 'other' class = 'radio-option' name = 'radio-btn' type = "radio" value = '4'>
+	        	 	<label for = 'lodging'>OTHER</label> 
+        	 </div>
+        	 
         	 <button id="viewReimb" class="btn" type="button">View Reimbursements</button>
         	 
         </div>
@@ -82,8 +100,8 @@
         </div>
         
         </div>
-        <script src='../js/logout.js'></script>
-        <script src='../js/employee.js'></script>
+       <!--  <script src='../js/logout.js'></script> -->
+        <script src='resources/js/employee.js'></script>
         
     </body>
 </html>

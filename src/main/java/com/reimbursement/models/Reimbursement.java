@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 
 @Entity
@@ -104,15 +104,13 @@ public class Reimbursement {
 	
 	
 	
-	public Reimbursement(int reimbursement_id, int reimbursement_amt, Date reimbursement_submt,
-			String reimbursement_despt, ReimbursementType rType, ReimbursementStatus rStatus) {
+	public Reimbursement(int reimbursement_id, int reimbursement_amt,
+			String reimbursement_despt, ReimbursementType rType) {
 		super();
 		this.reimbursement_id = reimbursement_id;
 		this.reimbursement_amt = reimbursement_amt;
-		this.reimbursement_submt = reimbursement_submt;
 		this.reimbursement_despt = reimbursement_despt;
 		this.rType = rType;
-		this.rStatus = rStatus;
 	}
 
 
@@ -259,7 +257,7 @@ public class Reimbursement {
 		return "Reimbursement [reimbursement_id=" + reimbursement_id + ", reimbursement_amt=" + reimbursement_amt
 				+ ", reimbursement_submt=" + reimbursement_submt + ", reimbursement_resolv=" + reimbursement_resolv
 				+ ", rAuthor=" + rAuthor.getUsername() + ", rResolver=" + rResolver.getUsername() + ", reimbursement_despt=" + reimbursement_despt
-				+ ", rType=" + rType + ", rStatus=" + rStatus + "]";
+				+ ", rType=" + rType.getReimbursement_type() + ", rStatus=" + rStatus.getReimbursement_status() + "]";
 	}
 	
 	

@@ -33,8 +33,8 @@ public class ReimbursementServices {
 	}
 	
 	//Adds new reimbursement
-	public void addReimbursement(int userId, int amt, Date date, String descp, ReimbursementType type, ReimbursementStatus status) {
-		Reimbursement r = new Reimbursement(userId ,amt, date, descp, type, status);
+	public void addReimbursement(int userId, int amt, String descp, ReimbursementType type) {
+		Reimbursement r = new Reimbursement(userId ,amt, descp, type);
 		rDao.createReim(r);
 	}
 	

@@ -29,46 +29,51 @@ public class ReimbursementController {
 	private static ReimbursementType rType = new ReimbursementType();
 	private static ReimbursementStatus rStatus = new ReimbursementStatus();
 	
-	public static void selectAllReimbursements(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException{
-		if(req.getMethod().equals("GET")) {
-			
-			
-			List<Reimbursement> rList = rServ.selectAllReimbursements();
-			System.out.println(rList);
-			res.addHeader("Access-Control-Allow-Origin", "*");
-			res.setHeader("Access-Control-Allow-Methods", "GET");
-			res.getWriter().write(new ObjectMapper().writeValueAsString(rList));
-			
-		}
+	
+	public static void viewReimbursements(HttpServletRequest req, HttpServletResponse res)throws JsonProcessingException, IOException{
+		
+		
+		List<Reimbursement> rList = rServ.selectAllReimbursements();
+		System.out.println(rList);
+		res.addHeader("Access-Control-Allow-Origin", "*");
+		res.setHeader("Access-Control-Allow-Methods", "GET");
+		res.getWriter().write(new ObjectMapper().writeValueAsString(rList));
+		
+	}
+	
+	
+	public static void addReimbursements(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException{
+//		if(req.getMethod().equals("GET")) {
+//		}
 //		else {
 //		}
-//			StringBuilder buffer = new StringBuilder();
-//			BufferedReader reader = req.getReader();
-//			
-//			String line;
-//			while((line = reader.readLine()) != null) {
-//				buffer.append(line);
-//				buffer.append(System.lineSeparator());
-//			}
-//			String data = buffer.toString();
-//			System.out.println(data);
-//			ObjectMapper mapper = new ObjectMapper();
-//			JsonNode parsedObj = mapper.readTree(data);
-//			
-//			int userId = Integer.parseInt(parsedObj.get("userId").asText());
-//			int amount = Integer.parseInt(parsedObj.get("userId").asText());
-//			String content = parsedObj.get("content").asText();
-//			User u = uServ.getUserById(userId);
+			StringBuilder buffer = new StringBuilder();
+			BufferedReader reader = req.getReader();
 			
-//			ReimbursementType rType = rServ.se
-//			rServ.addReimbursement(u, amount, content, rType);
+			String line;
+			while((line = reader.readLine()) != null) {
+				buffer.append(line);
+				buffer.append(System.lineSeparator());
+			}
+			String data = buffer.toString();
+			System.out.println(data);
+			ObjectMapper mapper = new ObjectMapper();
+			JsonNode parsedObj = mapper.readTree(data);
 			
-//			ObjectNode ret = mapper.createObjectNode();
-//			ret.put("message", "successfully submitted a new reimbursment");
-//			res.addHeader("Access-Control-Allow-Origin", "*");
-//			res.setHeader("Access-Control-Allow-Methods", "POST");
-//			res.getWriter().write(new ObjectMapper().writeValueAsString(ret));
 			
-	
+			int userId = Integer.parseInt(parsedObj.get("user_id").asText());
+			int amount = Integer.parseInt(parsedObj.get("amount").asText());
+			String content = parsedObj.get("content").asText();
+			ReimbursementType rType = new ReimbursementType();
+			User u = uServ.getUserById(userId);
+			
+			rServ.addReimbursement(userId, amount, content, rType);
+			
+			ObjectNode ret = mapper.createObjectNode();
+			ret.put("message", "successfully submitted a new reimbursment");
+			res.addHeader("Access-Control-Allow-Origin", "*");
+			res.setHeader("Access-Control-Allow-Methods", "POST");
+			res.getWriter().write(new ObjectMapper().writeValueAsString(ret));	
+
 	}
 }

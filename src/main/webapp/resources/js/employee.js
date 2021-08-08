@@ -10,21 +10,17 @@ document.getElementById("submitReimb").addEventListener('click', newReimbursemen
 
 async function newReimbursement(e){
 	e.preventDefault();
+	/*
 	let req = await fetch('http://localhost:8080/ERCProject1/api/session');
 	let res = await req.json();
+	*/
+	let uId = document.getElementById('eId').value;
+	let amount = document.getElementById('rAmount').value;
+	let description = document.getElementById('description').value;
 	
-	let uId = res.userId;
-	let amount = res.amount.getElementById('rAmount').value;
-	let description = res.content.value;
-	let type = res.document.getElementByName('radio-btn');
+	let type = document.getElementById('radio-option').value;
 	
-	for(var i = 0; i <type.length; i++){
-		if(type[i].checked){
-			alert(type[i].value);
-			break;
-		}
-	}
-	
+
 let reimbursement = {
 	
 	userId: uId,
@@ -42,10 +38,13 @@ await fetch('http://localhost:8080/ERCProject1/api/addReimbursements', {
 		contentType: "application/json",
 		body: JSON.stringify(reimbursement)
 	});
-
 	
+	let res = await req.json();
+	console.log(res);
 	
+	location.href = '/ERCProject1/employeeHome';
 }
+
 
 
 /*

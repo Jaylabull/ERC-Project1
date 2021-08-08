@@ -64,8 +64,10 @@ public class ReimbursementController {
 			int userId = Integer.parseInt(parsedObj.get("user_id").asText());
 			int amount = Integer.parseInt(parsedObj.get("amount").asText());
 			String content = parsedObj.get("content").asText();
-			ReimbursementType rType = new ReimbursementType();
 			User u = uServ.getUserById(userId);
+			
+			//pass through type
+			ReimbursementType rType = new ReimbursementType();
 			
 			rServ.addReimbursement(userId, amount, content, rType);
 			

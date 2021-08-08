@@ -211,11 +211,10 @@ public class User {
 		this.reimList = reimList;
 	}
 
-
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", firstname=" + firstname + ", lastname="
-				+ lastname + ", email=" + email + ", password=" + password + "]";
+				+ lastname + ", email=" + email + ", password=" + password + ", uRole=" + uRole.getUserRole() + "]";
 	}
 	
 

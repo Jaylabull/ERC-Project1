@@ -26,10 +26,5 @@ public class LoginViewController {
 		return  "resources/html/ManagerHome.html";
 	}
 	
-//	public static String logout(HttpServletRequest req) throws ServletException, IOException{
-//		System.out.println(req.getContentType());
-//		System.out.println("This should return the view landingpg.html");
-//		return  "resources/html/landingpg.html";
-//	}
 	
 }	

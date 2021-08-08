@@ -31,7 +31,7 @@ async function login(e){
 	if(res.role === 'MANAGER'){
 	location.href = '/ERCProject1/managerHome';
 	}else{
-		location.href = '/ERCProject1/employeeHome';
+	location.href = '/ERCProject1/employeeHome';
 		
 	}
 	} catch(e){

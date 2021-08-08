@@ -10,10 +10,10 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
     	<!-- 	Personal Style Sheet -->
-    	 <link rel="stylesheet" href="resources/css/style.css">
-    	 	 <link rel="stylesheet" href="../css/style.css">
+    	 <link rel="stylesheet" href="resources/css/style.css"> 
+    	 	 <!-- <link rel="stylesheet" href="../css/style.css"> -->
     </head>
-    <body>
+    <body id = 'body'>
 
      <!--    <div class='navbar'>
             <ul class='nav-list'>
@@ -31,7 +31,7 @@
 			    <a class="nav-link" href="#">Show Profile</a>
 			  </li>
 			  <li class="nav-item">
-			   <a class = 'nav-link' href="/ERCProject1/api/logout" >
+			   <a class = 'nav-link' href="/ERCProject1/login" >
 			   	 <button id = 'nav-item logout' class="nav-link emp-logout" >Logout</button>
 			   </a>
 			  </li>
@@ -41,24 +41,24 @@
         <div id='header' class= "header">
             <h1>Welcome to Big AI Reimbursement System</h1>
             <h2>Employee Services:</h2>
-            <br>
+ 
             </div>
-        	<div class = 'container-e-services'>
+        	<div id = 'container-e-services'>
         	 <button id="submitReimb" class="btn" type="button">Submit a Reimbursement Request</button>
-        	 <div class = 'eServ-form'>
+        	 <div id = 'eServ-form'>
         	 
-	        	 <input id = 'eId' type = "number" placeholder ="Enter Employee id" required></input>
-	        	 <input id = 'rAmount' type = "text" placeholder = "Enter Reimbursement Amount" required minlength = '3'></input>
-	        	 <input id = 'description'  type = "text" placeholder = "Enter Description for Reimbursement" required></input> 
-	        	<div class = 'radio-opts'>
+	        	 <input id = 'eId input' type = "number" placeholder ="Enter Employee id" required></input>
+	        	 <input id = 'rAmount input' type = "text" placeholder = "Enter Reimbursement Amount" required minlength = '3'></input>
+	        	 <input id = 'description input'  type = "text" placeholder = "Enter Description for Reimbursement" required></input> 
+	        	<div id = 'radio-opts'>
 		        	 <input class = 'radio-input' id = 'radio-option' name = 'radio-btn' type = "radio" value = 'TRAVEL'>
-		        	 	<label class = 'radio-label'for = 'travel'>TRAVEL</label> 
+		        	 	<label id = 'radio-label'for = 'travel'>TRAVEL</label> 
 		        	 <input id = 'radio-option' class = 'radio-input' name = 'radio-btn' type = "radio" value = 'FOOD'>
-		        	 	<label class = 'radio-label' for = 'food'>FOOD</label> 
+		        	 	<label id = 'radio-label' for = 'food'>FOOD</label> 
 		        	 <input id = 'radio-option' class = 'radio-input' name = 'radio-btn' type = "radio" value = 'LODGING'>
-		        	 	<label class = 'radio-label' for = 'lodging'>LODGING</label> 
+		        	 	<label id = 'radio-label' for = 'lodging'>LODGING</label> 
 		        	 <input id = 'radio-option' class = 'radio-input' name = 'radio-btn' type = "radio" value = 'OTHER'>
-		        	 	<label class = 'radio-label' for = 'lodging'>OTHER</label> 
+		        	 	<label id = 'radio-label' for = 'lodging'>OTHER</label> 
 	        	 </div> 
         	 </div>
         	 

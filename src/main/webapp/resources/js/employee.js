@@ -10,10 +10,6 @@ document.getElementById("submitReimb").addEventListener('click', addReimbursemen
 
 async function addReimbursements(e){
 	e.preventDefault();
-	/*
-	let req = await fetch('http://localhost:8080/ERCProject1/api/session');
-	let res = await req.json();
-	*/
 	let uId = document.getElementById('eId').value;
 	let amount = document.getElementById('rAmount').value;
 	let description = document.getElementById('description').value;
@@ -104,4 +100,3 @@ function populateReim(data) {
 	}
 		
 }
-*/

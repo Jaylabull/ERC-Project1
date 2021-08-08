@@ -24,7 +24,6 @@ input{
 	background-color: var(--primary-color); 
 	width: 450px;
 	height: 35px;
- margin-bottom: 15px;
 }
 
 label{
@@ -32,7 +31,7 @@ label{
 	display: block;	
 }
 
-body{
+#body{
  
 	  background-color: var( --fifth-color);
 }  
@@ -145,33 +144,39 @@ div.header{
 	background-color: var(--primary-color);
 }
 
-.container-e-services{
+#input{
+	 margin-bottom: 15px;
+}
+
+#container-e-services{
 	display: flex;
     justify-items: center;
     flex-direction: column;
     align-items: center;
-     margin: 30px 30px;
+    margin: 0px 30px;
     padding: 20px 250px;
    
 }
 
-eServ-form{
+#eServ-form{
 	display: flex;
+	flex-direction: column;
 }
 
-div.radio-opts{
+div#radio-opts{
 	display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
 }
 
-label.radio-label{
+
+label#radio-label{
 	padding: 5px;
 	font-size: 14px;
     margin: 10px;
 }
 
-input.radio-input{
+input#radio-option{
 	height: 20px;
 	width: 20px;
 	vertical-align: middle

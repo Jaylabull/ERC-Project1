@@ -45,10 +45,6 @@ public class ReimbursementServiceTest {
 		
 	}
 	
-	@Test
-	public void testAddReimbursement(User author, int amount, String descrition, ReimbursementType type ) {
-		
-		
-	}
+
 	
 }

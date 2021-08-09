@@ -32,7 +32,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	public void testSignIn() {
+	public User testUserSignUp() {
 		UserRole r1 = new UserRole("EMPLOYEE");
 		UserRole r2 = new UserRole("FINANCIAL MANAGER");
 		
@@ -40,11 +40,28 @@ public class UserServiceTest {
 		User u = new User(1, "User123", "User", "Test", "test@email.com", "testpassword", r1);
 		User notUser = new User(0, "User", "Test", "test@email.com", "testpassword", r2);
 		
-		when(uDao.selectByUsername(anyString())).thenReturn(u);
+		
+		uDao.createUser(u);
+		//when(uDao.selectByUsername(anyString())).thenReturn(u);
+		return u;
+		
+	}
+	
+	@Test
+	public void testSignIn() {
+		UserRole r1 = new UserRole("EMPLOYEE");
+		User u = new User(1, "User123", "User", "Test", "test@email.com", "testpassword", r1);
 		
 		User signedIn = uServ.signIn("User123", "testpassword");
 		
 		assertEquals(u.getUsername(), signedIn.getUsername());
+	}
+
+	@Test
+	public User testGetUserById() {
+		int id = 0;
+		return uDao.selectByUserId(id);
+			
 	}
 
 	

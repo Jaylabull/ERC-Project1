@@ -47,9 +47,9 @@
         	 <button id="submitReimb" class="btn" type="button">Submit a Reimbursement Request</button>
         	 <div id = 'eServ-form'>
         	 
-	        	 <input id = 'eId input' type = "number" placeholder ="Enter Employee id" required></input>
-	        	 <input id = 'rAmount input' type = "text" placeholder = "Enter Reimbursement Amount" required minlength = '3'></input>
-	        	 <input id = 'description input'  type = "text" placeholder = "Enter Description for Reimbursement" required></input> 
+	        	 <input id = 'eId' type = "number" placeholder ="Enter Employee id" required></input>
+	        	 <input id = 'rAmount' type = "text" placeholder = "Enter Reimbursement Amount" required minlength = '3'></input>
+	        	 <input id = 'description'  type = "text" placeholder = "Enter Description for Reimbursement" required></input> 
 	        	<div id = 'radio-opts'>
 		        	 <input class = 'radio-input' id = 'radio-option' name = 'radio-btn' type = "radio" value = 'TRAVEL'>
 		        	 	<label id = 'radio-label'for = 'travel'>TRAVEL</label> 
@@ -61,48 +61,15 @@
 		        	 	<label id = 'radio-label' for = 'lodging'>OTHER</label> 
 	        	 </div> 
         	 </div>
-        	 
+        	 <div id="reim-container"> 
+
+        	   
+        	   </div>
         	 <button id="viewReimb" class="btn" type="button">View Reimbursements</button>
         	 
         
-  
-           <div id="reim-container" >
-			<table class="table reimTable">
-			  <thead>
-			    <tr>
-			      <th scope="col">Reimbursement ID</th>
-			      <th scope="col">Type</th>
-			      <th scope="col">Amount</th>
-			      <th scope="col">Description</th>
-			      <th scope="col">Date Submitted</th>
-			      <th scope="col">Status</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row"></th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row"></th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row"></th>
-			      <td colspan="2"></td>
-			      <td></td>
-			    </tr>
-			  </tbody>
-			</table>	
-			
         </div>
-        
-        </div>
-        <script src="resources/js/login.js"></script> 
+       <!--  <script src="resources/js/login.js"></script>  -->
         <script src='resources/js/employee.js'></script>
         <script src='../js/logout.js'></script> 
          

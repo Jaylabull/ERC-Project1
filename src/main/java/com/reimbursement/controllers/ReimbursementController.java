@@ -70,12 +70,11 @@ public class ReimbursementController {
 //			System.out.println(userId);
 			User u = uServ.getUserById(userId);
 			
-//			ReimbursementType rType = new ReimbursementType();
-//			rType.getTypeId();
+			rType.getTypeId();
 			
-			ReimbursementType rType = rDao.selectByRType(userId);
+			//ReimbursementType rType = rDao.selectByRType(userId);
 			
-			rServ.addReimbursements(u, amount, content, rType);
+			Reimbursement reimbursement = rServ.addReimbursements(u, amount, content, rType);
 			
 			
 			ObjectNode ret = mapper.createObjectNode();
@@ -86,7 +85,7 @@ public class ReimbursementController {
 			ret.put("message", "successfully submitted a new reimbursment");
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");
-			res.getWriter().write(new ObjectMapper().writeValueAsString(ret));	
+			res.getWriter().write(new ObjectMapper().writeValueAsString(reimbursement));	
 
 	}
 }

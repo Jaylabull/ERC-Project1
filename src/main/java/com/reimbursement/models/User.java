@@ -44,15 +44,15 @@ public class User {
 	@Column(name = "password", nullable = false)
 	private String password;
 	
-	@OneToMany(mappedBy = "rResolver", fetch = FetchType.LAZY)
-	private List<Reimbursement> remList = new ArrayList<Reimbursement>();
+//	@OneToMany(mappedBy = "rResolver", fetch = FetchType.LAZY)
+//	private List<Reimbursement> remList = new ArrayList<Reimbursement>();
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "uRole_FK")
 	private UserRole uRole;
 	
-	@OneToMany(mappedBy = "rAuthor", fetch = FetchType.LAZY)
-	private List<Reimbursement> reimList = new ArrayList<Reimbursement>();
+//	@OneToMany(mappedBy = "rAuthor", fetch = FetchType.LAZY)
+//	private List<Reimbursement> reimList = new ArrayList<Reimbursement>();
 		
 	public User() {
 		
@@ -120,7 +120,7 @@ public class User {
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
-		this.remList = remList;
+	//	this.remList = remList;
 		this.uRole = uRole;
 	}
 
@@ -133,7 +133,7 @@ public class User {
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
-		this.remList = remList;
+	//	this.remList = remList;
 		this.uRole = uRole;
 	}
 
@@ -186,14 +186,14 @@ public class User {
 		this.password = password;
 	}
 
-	public List<Reimbursement> getRemList() {
-		return remList;
-	}
-
-
-	public void setRemList(List<Reimbursement> remList) {
-		this.remList = remList;
-	}
+//	public List<Reimbursement> getRemList() {
+//		return remList;
+//	}
+//
+//
+//	public void setRemList(List<Reimbursement> remList) {
+//		this.remList = remList;
+//	}
 
 	public UserRole getuRole() {
 		return uRole;
@@ -203,13 +203,13 @@ public class User {
 		this.uRole = uRole;
 	}
 
-	public List<Reimbursement> getReimList() {
-		return reimList;
-	}
-
-	public void setReimList(List<Reimbursement> reimList) {
-		this.reimList = reimList;
-	}
+//	public List<Reimbursement> getReimList() {
+//		return reimList;
+//	}
+//
+//	public void setReimList(List<Reimbursement> reimList) {
+//		this.reimList = reimList;
+//	}
 
 	@Override
 	public String toString() {

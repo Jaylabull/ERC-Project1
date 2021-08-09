@@ -49,7 +49,7 @@ public class LoginController {
 			String role = u.getuRole().getUserRole();
 			req.getSession().setAttribute("uRole", role);
 			
-			req.getSession().setAttribute("user_id", u.getUserId());
+//			req.getSession().setAttribute("user_id", u.getUserId());
 			res.setStatus(HttpServletResponse.SC_OK);
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");

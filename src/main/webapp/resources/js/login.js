@@ -28,18 +28,23 @@ async function login(e){
 		let res = await req.text();
 		console.log(res);
 		
-	if(res.role === 'MANAGER'){
+	if(res.role === 'FINANCIAL MANAGER'){
 	location.href = '/ERCProject1/managerHome';
 	}else{
 	location.href = '/ERCProject1/employeeHome';
-		
 	}
+		
+	
+
 	} catch(e){
 		console.log(e.stack);
 		alert('Username or password incorrect!');
 		return;
 	}
 /*
+
+
+
 location.href = '/ERCProject1/employeeHome';
 */
 

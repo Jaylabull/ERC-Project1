@@ -1,20 +1,11 @@
 
-let container = document.getElementById('reim-container');
-
-async function getReimbursement(){
-}
-
-
-
-document.getElementById("submitReimb").addEventListener('click', addReimbursements);
-
 async function addReimbursements(e){
 	e.preventDefault();
 	let uId = document.getElementById('eId').value;
 	let amount = document.getElementById('rAmount').value;
 	let description = document.getElementById('description').value;
 	let type = document.getElementById('radio-option').value;
-	
+	let testDiv = document.getElementById('test');
 
 let reimbursement = {
 	
@@ -25,7 +16,7 @@ let reimbursement = {
 
 }
 
-console.log(reimbursement);
+//console.log(reimbursement);
 
 
 let req = await fetch('http://localhost:8080/ERCProject1/api/addReimbursements', {
@@ -38,25 +29,11 @@ let req = await fetch('http://localhost:8080/ERCProject1/api/addReimbursements',
 	});
 	
 	let res = await req.json();
-	console.log(res);
 	
-	
-}
+		
+			console.log(res);
 
-
-
-/*
-function populateReim(data) {
-	
-	 headers:{
-                 'Content-Type' : 'application/json'
-             }
-             
-             
-	location.href = '/ERCProject1/employeeHome';
-	
-	
-	forEach(postObj of data){
+     
 		let rTable = document.createElement('div');
 		
 		rTable.classList.add('reimTable');
@@ -65,26 +42,20 @@ function populateReim(data) {
 			<table class="table reimTable">
 			  <thead>
 			    <tr>
-			      <th scope="col">Reimbursement ID: ${}</th>
-			      <th scope="col">Type</th>
+			     <th scope="col"></th>
+			      <th scope="col">Reimbursement ID:</th>
 			      <th scope="col">Amount</th>
 			      <th scope="col">Description</th>
-			      <th scope="col">Date Submitted</th>
-			      <th scope="col">Status</th>
+			      <th scope="col">Type</th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr>
 			      <th scope="row"></th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row"></th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
+			      <td>${res.reimbursement_id}</td>
+			      <td>${res.reimbursement_amt}</td>
+			      <td>${res.reimbursement_despt}</td>
+			      <td>TRAVEL</td>
 			    </tr>
 			    <tr>
 			      <th scope="row"></th>
@@ -94,9 +65,14 @@ function populateReim(data) {
 			  </tbody>
 			</table>
 		`;
-		console.log(postObj);
-		container.append(rTable);
 		
-	}
-		
-}
+let container = document.getElementById('reim-container'); 
+container.append(rTable);
+
+	} 
+
+			
+
+
+document.getElementById("submitReimb").addEventListener('click', addReimbursements);
+ddocument.getElementById("viewReimb").addEventListener('click', viewReimbursements);

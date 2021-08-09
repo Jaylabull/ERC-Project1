@@ -34,9 +34,10 @@ public class ReimbursementServices {
 	}
 	
 	//Adds new reimbursement
-	public void addReimbursements(User rAuthor, int amt, String descp, ReimbursementType type) {
+	public Reimbursement addReimbursements(User rAuthor, int amt, String descp, ReimbursementType type) {
 		Reimbursement r = new Reimbursement(rAuthor ,amt, descp, type);
 		rDao.createReim(r);
+		return r;
 	}
 	
 	//Select Pending Reimbursements

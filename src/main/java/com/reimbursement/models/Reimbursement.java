@@ -47,15 +47,15 @@ public class Reimbursement {
 	@Column(name = "reimb_resolve", nullable = true)
 	private Date reimbursement_resolv;
 	
-	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "reimb_author", referencedColumnName = "user_id")
-	private User rAuthor;
-	
-	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="reimb_resolver",  referencedColumnName = "user_id")
-	private User rResolver;
+//	@JsonIgnore
+//	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "reimb_author", referencedColumnName = "user_id")
+//	private User rAuthor;
+//	
+//	@JsonIgnore
+//	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name="reimb_resolver",  referencedColumnName = "user_id")
+//	private User rResolver;
 	
 	
 	@Column(name = "reimb_despt", nullable = false)
@@ -111,7 +111,7 @@ public class Reimbursement {
 		this.reimbursement_amt = reimbursement_amt;
 		Date date = new Date();
 		Timestamp rSubmitted = new Timestamp(date.getTime());
-		this.rAuthor = rAuthor;
+	//	this.rAuthor = rAuthor;
 		this.reimbursement_despt = reimbursement_despt;
 		this.rType = rType;
 	}
@@ -122,8 +122,8 @@ public class Reimbursement {
 		super();
 		this.setReimbursement_id(new Random().nextInt(9000) + 1000);
 		this.reimbursement_amt = reimbursement_amt;
-		this.rAuthor = rAuthor;
-		this.rResolver = rResolver;
+//		this.rAuthor = rAuthor;
+//		this.rResolver = rResolver;
 		this.reimbursement_despt = reimbursement_despt;
 		this.rType = rType;
 		this.rStatus = rStatus;
@@ -157,8 +157,8 @@ public class Reimbursement {
 		this.reimbursement_amt = reimbursement_amt;
 		this.reimbursement_submt = reimbursement_submt;
 		this.reimbursement_resolv = reimbursement_resolv;
-		this.rAuthor = rAuthor;
-		this.rResolver = rResolver;
+//		this.rAuthor = rAuthor;
+//		this.rResolver = rResolver;
 		this.reimbursement_despt = reimbursement_despt;
 		this.rType = rType;
 		this.rStatus = rStatus;
@@ -205,24 +205,24 @@ public class Reimbursement {
 		this.reimbursement_despt = reimbursement_despt;
 	}
 	
-	public User getrAuthor() {
-		return rAuthor;
-	}
-
-
-	public void setrAuthor(User rAuthor) {
-		this.rAuthor = rAuthor;
-	}
-
-
-	public User getrResolver() {
-		return rResolver;
-	}
-
-
-	public void setrResolver(User rResolver) {
-		this.rResolver = rResolver;
-	}
+//	public User getrAuthor() {
+//		return rAuthor;
+//	}
+//
+//
+//	public void setrAuthor(User rAuthor) {
+//		this.rAuthor = rAuthor;
+//	}
+//
+//
+//	public User getrResolver() {
+//		return rResolver;
+//	}
+//
+//
+//	public void setrResolver(User rResolver) {
+//		this.rResolver = rResolver;
+//	}
 
 
 	public ReimbursementType getrType() {
@@ -255,13 +255,13 @@ public class Reimbursement {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Reimbursement [reimbursement_id=" + reimbursement_id + ", reimbursement_amt=" + reimbursement_amt
-				+ ", reimbursement_submt=" + reimbursement_submt + ", reimbursement_resolv=" + reimbursement_resolv
-				+ ", rAuthor=" + rAuthor.getUsername() + ", rResolver=" + rResolver.getUsername() + ", reimbursement_despt=" + reimbursement_despt
-				+ ", rType=" + rType.getReimbursement_type() + ", rStatus=" + rStatus.getReimbursement_status() + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Reimbursement [reimbursement_id=" + reimbursement_id + ", reimbursement_amt=" + reimbursement_amt
+//				+ ", reimbursement_submt=" + reimbursement_submt + ", reimbursement_resolv=" + reimbursement_resolv
+//				+ ", rAuthor=" + rAuthor.getUsername() + ", rResolver=" + rResolver.getUsername() + ", reimbursement_despt=" + reimbursement_despt
+//				+ ", rType=" + rType.getReimbursement_type() + ", rStatus=" + rStatus.getReimbursement_status() + "]";
+//	}
 	
 	
 

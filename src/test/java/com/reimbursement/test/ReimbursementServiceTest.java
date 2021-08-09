@@ -14,6 +14,8 @@ import org.mockito.MockitoAnnotations;
 
 
 import com.reimbursement.dao.ReimbursementDaoDB;
+import com.reimbursement.models.ReimbursementType;
+import com.reimbursement.models.User;
 import com.reimbursement.services.ReimbursementServices;
 
 public class ReimbursementServiceTest {
@@ -40,6 +42,12 @@ public class ReimbursementServiceTest {
 		Mockito.verify(rList).add("test");
 		
 		assertEquals(1, rList.size());	
+		
+	}
+	
+	@Test
+	public void testAddReimbursement(User author, int amount, String descrition, ReimbursementType type ) {
+		
 		
 	}
 	

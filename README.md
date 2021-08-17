@@ -23,9 +23,9 @@ To-do List:
 - Manager can approve or deny a reimbursement.
 
 ## Getting Started
-1. Set up tables (including lookup tables) to base models in Java program. Hiberante utilized to map models to the database table. 
+1. Set up tables (including lookup tables) to base models in Java program. Hiberante utilized to map models to the database table 
 <img width="759" alt="Screen Shot 2021-08-17 at 2 20 53 PM" src="https://user-images.githubusercontent.com/53324211/129780352-e54c65c6-2731-4ba8-8746-4e6b56d8ea73.png">
-2. DAO layer set up using CRUD functionality. 
-3. Service layer created and JUnit tested set up simultaneously. 
-4. Servlets created based on services. 
-5. Front end created in between services and at the end of the Servlet creation.
+2. DAO layer set up using CRUD functionality 
+3. Service layer created and JUnit tested set up simultaneously
+4. Servlets created based on services 
+5. Front end created in between services and at the end of the Servlet creation
